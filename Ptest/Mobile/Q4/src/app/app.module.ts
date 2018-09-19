@@ -8,26 +8,32 @@ import { ListPage } from '../pages/list/list';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { AdditemPage } from '../pages/additem/additem';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
-    ListPage
+    ListPage,
+    AdditemPage,
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     IonicModule.forRoot(MyApp),
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
     HomePage,
-    ListPage
+    ListPage,
+    AdditemPage,
   ],
   providers: [
     StatusBar,
     SplashScreen,
+    HttpClient,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
