@@ -12,7 +12,7 @@ namespace api.tests
         [InlineData(172, 71, 23.99)]
         public void TestBMICalculator(double weight, double height, double expected)
         {
-            var Ctrl = new BMIController();
+            var Ctrl = new BMI();
             var result = Ctrl.Calculator(weight, height);
             Assert.Equal(expected, result);
         }
@@ -24,7 +24,7 @@ namespace api.tests
         public void BMINormalweightMessage(double bmi)
         {
             var expected = $"Your BMI: {bmi}/nYou're within the normal weight range.";
-            var Ctrl = new BMIController();
+            var Ctrl = new BMI();
             var result = Ctrl.BMIMessage(bmi);
             Assert.Equal(expected, result);
         }
@@ -35,7 +35,7 @@ namespace api.tests
         public void BMIUnderweightMessage(double bmi)
         {
             var expected = "You're underweight. You should consult your doctor!";
-            var Ctrl = new BMIController();
+            var Ctrl = new BMI();
             var result = Ctrl.BMIMessage(bmi);
             Assert.Equal(expected, result);
         }
@@ -46,7 +46,7 @@ namespace api.tests
         public void BMIOverweightMessage(double bmi)
         {
             var expected = "You're overweight. You should consult your doctor!";
-            var Ctrl = new BMIController();
+            var Ctrl = new BMI();
             var result = Ctrl.BMIMessage(bmi);
             Assert.Equal(expected, result);
         }

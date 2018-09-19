@@ -12,14 +12,26 @@ namespace api.Controllers
     {
         // GET api/values
         [HttpGet("{weight}/{height}")]
-        public double Calculator(double weight, double height)
+        public string Calculator(double weight, double height)
+        {
+            var bmiAction = new BMI();
+
+            var bmi = bmiAction.Calculator(weight,height);
+            var message = bmiAction.BMIMessage(bmi);
+            return message;
+   
+        }
+    }
+
+    public class BMI
+    {
+       public double Calculator(double weight, double height)
         {
             var bmi = (weight/(Math.Pow(height,2)))*703;
             return Math.Round(bmi, 2);
    
         }
-        
-        [HttpGet]
+
         public string BMIMessage(double bmi)
         {
             var message = bmi >= 18.5 && bmi <= 25 ? $"Your BMI: {bmi}/nYou're within the normal weight range."
