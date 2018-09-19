@@ -29,15 +29,16 @@ namespace q4api.Controllers
                 unitprice = 39990
             };
 
+        
 
         }
 
-        // GET api/values/5
-        [HttpGet("{id}")]
-        public ActionResult<string> Get(int id)
-        {
-            return "value";
-        }
+        // // GET api/values/5
+        // [HttpGet("{id}")]
+        // public ActionResult<string> Get(int id)
+        // {
+        //     return "value";
+        // }
 
 
 
@@ -47,7 +48,7 @@ namespace q4api.Controllers
         [HttpPost]
         public void Createitem([FromBody]item data)
         {
-            
+          
         }
 
 
@@ -55,16 +56,16 @@ namespace q4api.Controllers
 
 
 
-        // PUT api/values/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
-        {
-        }
+        // // PUT api/values/5
+        // [HttpPut("{id}")]
+        // public void Put(int id, [FromBody] string value)
+        // {
+        // }
 
-        // DELETE api/values/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
-        }
+        // // DELETE api/values/5
+        // [HttpDelete("{id}")]
+        // public void Delete(int id)
+        // {
+        // }
     }
 }

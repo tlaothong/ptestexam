@@ -17,8 +17,10 @@ namespace bmitest
 
         [Theory]
         [InlineData (50, 150, 22)]
-        // [InlineData (2, 2, 4)]
-        // [InlineData (5, 2, 7)]
+        [InlineData (70, 180, 21)]
+        [InlineData (100, 180, 30)]
+        [InlineData (40, 170, 13)]
+        
        
         public void Test1 (double weight, double height, double expected) 
         {
