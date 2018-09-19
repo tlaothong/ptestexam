@@ -11,10 +11,19 @@
 
 <ion-content padding>
   <ion-list *ngIf="Orders">
-    <ion-item ion-item *ngFor="let s of Orders">
-      <img col-3 item-start src="https://www.versapay.com/wp-content/uploads/2016/08/Invoice2-icon.png" /> {{s.purchaseDate}}
-      <br /><span *ngFor="let p of s.products">{{p.name}} {{p.unitPrice}}<br/></span>
-      Total: {{s.totalPrice}}
+    <ion-item ion-item *ngFor="let s of Orders" style="font-size: 80%">
+      <img col-4 item-start src="https://www.versapay.com/wp-content/uploads/2016/08/Invoice2-icon.png" />
+      <div ion-row>
+        <span col-8>{{s.purchaseDate}}</span>
+      </div>
+      <div *ngFor="let p of s.products" ion-row>
+        <span col-8>{{p.name}}</span>
+        <span col-4 text-right>{{p.unitPrice}}</span>
+      </div>
+      <div ion-row>
+        <span col-8>Total</span>
+        <span col-4 text-right>{{s.totalPrice}}</span>
+      </div>
     </ion-item>
   </ion-list>
 </ion-content>
