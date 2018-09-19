@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Ionic Blank
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <ion-item>
+      <ion-label color="primary">Weight</ion-label>
+      <ion-input placeholder="Weight Input" [(ngModel)]="weight"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label color="primary">Height</ion-label>
+      <ion-input placeholder="Height Input" [(ngModel)]="height"></ion-input>
+    </ion-item>
+    <div class="row">
+      <div class="col"></div>
+      <div class="col">
+        <button ion-button block (click)="getBMI()">get BMI</button>
+      </div>
+      <div class="col"></div>
+    </div>
+  </ion-list>
+  {{message}}
+</ion-content>

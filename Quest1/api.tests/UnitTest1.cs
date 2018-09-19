@@ -23,7 +23,7 @@ namespace api.tests
         [InlineData(25)]
         public void BMINormalweightMessage(double bmi)
         {
-            var expected = $"Your BMI: {bmi}/nYou're within the normal weight range.";
+            var expected = $"Your BMI: {bmi}. You're within the normal weight range.";
             var Ctrl = new BMI();
             var result = Ctrl.BMIMessage(bmi);
             Assert.Equal(expected, result);
