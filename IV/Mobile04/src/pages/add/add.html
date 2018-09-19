@@ -1,0 +1,26 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>add</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-item>
+    <ion-label>Name</ion-label>
+    <ion-input type="text" [(ngModel)]="item.Name"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Serial</ion-label>
+    <ion-input type="text" [(ngModel)]="item.Serial"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Price</ion-label>
+    <ion-input type="number" [(ngModel)]="item.Price"></ion-input>
+  </ion-item>
+  <div>
+    <button ion-button block (click)="goHomePage()">OK</button>
+  </div>
+</ion-content>
