@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Lottery
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+ <ion-grid>
+
+   <!-- <ion-row>
+     <ion-col col-12>
+      <ion-item>
+        <ion-input type="number" placeholder="Number" [(ngModel)]="NumberLot"></ion-input>
+      </ion-item>
+     </ion-col>
+   </ion-row> -->
+
+   <ion-row>
+      <ion-col col-12>
+        <div class = "centerPosition">
+           <button ion-button color="danger" round (click) = "randomLot()">Random</button>
+        </div>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col col-12>
+        <div class = "centerPosition">
+          {{NumberLot}}
+        </div>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+        <ion-col col-12>
+          <div class = "centerPosition">
+            {{ShowMessage}}
+          </div>
+        </ion-col>
+      </ion-row>
+
+ </ion-grid>
+</ion-content>
