@@ -14,52 +14,29 @@ namespace webapi
         public double Calculator(double weight, double height)
         {
 
-            //int shopbudget = 500;
+           
             double bmi;
             double bmitotal;
             double point;
+
+            if( weight>120){
+                throw new Exception("Normal people can't have height than 220 and weight than 120");
+            }
+
+            if( height>220){
+                throw new Exception("Normal people can't have height than 220 and weight than 120");
+            }
+            else{
+
+            
             height = (height * 2) / 100;
             bmi = (weight / height);
+            }
             
-            //    if ( bmi >= 18.5 && bmi <= 25 )
-            //     {
-                        
-            //         throw new Exception("!! i can't change you cash For Diamond");
-            //     }
-            //     //Check input should more than 0         
-            //     if( mymoney < 0 )
-            //     {
-            //         //return -1;
-            //         throw new Exception("Input less than 0");
-            //     }
-
-            //     else
-            //     {
-            //         return mymoney-price;
-            //     }
-            // }
-
-            // public  int ChangeMoneyO(int mymoney, int price)
-            // {
-            //     int shopbudget = 500;
-            //     var sumChange = mymoney - price;
-            //     if(shopbudChange )
-            //     {
-            //         //return -1;
-            //         throw new Exception("!! i can't change you cash For O");
-            //     }
-
-            //     //Check input should more than 0         
-            //     if( mymoney < 0 )
-            //     {
-            //         //return -1;
-            //         throw new Exception("Input less than 0");
-            //     }
-            //     else
-            //     {
-            //         return mymoney-price;
-            //     }
+        
             return bmi;
         }
-    }
+
+       
+}
 }

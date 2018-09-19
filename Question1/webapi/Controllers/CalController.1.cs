@@ -19,7 +19,7 @@ namespace webapi.Controllers
         {
             var cal = new CalBmi();
             var bmi = cal.Calculator(weight,height);
-             string bmifinal = bmi.ToString("#,###.0");
+            string bmifinal = bmi.ToString("#,###.0");
             return bmifinal ;
             
         }
