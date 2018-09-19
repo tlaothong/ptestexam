@@ -3,7 +3,7 @@ using System;
 
 namespace demoapi.Controllers 
 {
-    public class booklist 
+    public class item 
     {
      
         public string name { get; set; }
