@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Ionic Blank
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-input type="number" placeholder="fill your height" [(ngModel)]="height"></ion-input>
+  <ion-input type="number" placeholder="fill your weight" [(ngModel)]="weight"></ion-input>
+
+  <ion-row>
+    <button ion-button full (click)="cal()">
+      Calculate BMI
+    </button>
+  </ion-row>
+  <div>
+    Your MBI: {{result.result}}
+  </div>
+  <div>
+    {{result.comment}}
+  </div>
+  
+</ion-content>
+
