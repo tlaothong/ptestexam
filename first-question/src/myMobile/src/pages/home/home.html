@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      BMI
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  
+  <form (ngSubmit)="calculate()">
+    <ion-item>
+      <ion-label>Weight</ion-label>
+      <ion-input type="number" [(ngModel)]="model.weight" name="weight"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Height</ion-label>
+      <ion-input type="number" [(ngModel)]="model.height" name="height"></ion-input>
+    </ion-item>
+    <button ion-button type="submit" block>Calculate</button>
+  </form>
+
+</ion-content>
