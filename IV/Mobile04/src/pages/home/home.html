@@ -1,14 +1,31 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Ionic Blank
+      SorrY
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+  <ion-row>
+    <ion-col>
+      <ion-item>
+        <label col-4>Name</label>
+        <label col-4>Serial Number</label>
+        <label col-4>Unit Price</label>
+      </ion-item>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>
+      <ion-item *ngFor="let it of item">
+        <label col-4> {{ item.Name }} </label>
+        <label col-4> {{item.Serial}} </label>
+        <label col-4> {{ item.Price }} </label>
+      </ion-item>
+    </ion-col>
+  </ion-row>
+  <div text-center>
+  <button ion-button block (click)="goAddPage()">ADD</button>
+  </div>
 </ion-content>

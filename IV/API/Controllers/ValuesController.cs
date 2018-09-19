@@ -27,25 +27,36 @@ namespace api2.Controllers
         }
 
         // GET api/values/5
-        [HttpGet("{Name}")]
-        public Dog GetByName(String Name)
-        {
-            return DogCallection.Find(x => x.Name == Name).FirstOrDefault();
-        }
+        // [HttpGet("{Name}")]
+        // public Dog GetByName(String Name)
+        // {
+        //     return DogCallection.Find(x => x.Name == Name).FirstOrDefault();
+        // }
 
         // POST api/values
-        [HttpPost("{data}")]
-        public void InsertNewDog([FromBody]Dog data)
-        {
-            data.Id = Guid.NewGuid().ToString();
-            DogCallection.InsertOne(data);
-        }
+        // [HttpPost("{data}")]
+        // public void InsertNewDog([FromBody]Dog data)
+        // {
+        //     data.Id = Guid.NewGuid().ToString();
+        //     DogCallection.InsertOne(data);
+        // }
 
-        [HttpPost("{request}")]
-        public void EditDog([FromBody]Dog request)
+        [HttpPost]
+        public void create([FromBody]Dog request)
         {
-            DogCallection.ReplaceOne(x => x.Id == request.Id, request);
+
+            request.Id = Guid.NewGuid().ToString();
+            request.Name = request.Name;
+            request.Serial = request.Serial;
+            request.price = request.price;
+
+            DogCallection.InsertOne(request);
         }
+        // [HttpPost("{request}")]
+        // public void EditDog([FromBody]Dog request)
+        // {
+        //     DogCallection.ReplaceOne(x => x.Id == request.Id, request);
+        // }
 
     }
 }

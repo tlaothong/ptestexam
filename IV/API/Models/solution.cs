@@ -9,6 +9,7 @@ namespace api2.Models
     {
         public string Id { get; set; }
         public string Name { get; set; }
-        public string Own {get; set;} 
+        public string Serial {get; set;} 
+        public int price {get; set;} 
     }
 }
