@@ -5,14 +5,25 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using myWeb.Models;
+using myLibrary;
 
 namespace myWeb.Controllers
 {
     public class HomeController : Controller
     {
+        [HttpGet]
         public IActionResult Index()
         {
             return View();
+        }
+
+        [HttpPost]
+        public IActionResult Index(int amount)
+        {
+            var calculator = new MultiplicationTable();
+            var result = calculator.Calculate(amount);
+            if(result == null) ViewBag.ErrorMessage = "Please input more than zero.";
+            return View(result);
         }
 
         public IActionResult About()
