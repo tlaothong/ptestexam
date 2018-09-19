@@ -19,4 +19,10 @@ export class CatalogServiceProvider {
     return this.http.get(this.baseUrl+'/catalog/search/'+key+'/'+value)
     .toPromise<any>();
   }
+
+  AddProduct(product:any): Promise<any>{
+    var options = { "headers": { "Content-Type": "application/json" } };
+    return this.http.post(this.baseUrl+'/catalog/addproduct', product, options)
+    .toPromise<any>();
+  }
 }

@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { CatalogServiceProvider } from '../../providers/catalog-service/catalog-service';
 import { CartPage } from '../cart/cart';
+import { AddProductPage } from '../add-product/add-product';
 
 
 @Component({
@@ -30,6 +31,18 @@ export class HomePage {
     this.catalogService.Search(this.SearchKey, this.SearchText).then(data => {
       this.Products = data;
     });
+  }
+
+  ionViewDidEnter()
+  {
+    this.catalogService.Search(this.SearchKey, this.SearchText).then(data => {
+      this.Products = data;
+    });
+  }
+
+  AddProduct()
+  {
+    this.navCtrl.push(AddProductPage);
   }
 
   Buy(product: any)

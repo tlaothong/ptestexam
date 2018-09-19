@@ -10,12 +10,14 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { CatalogServiceProvider } from '../providers/catalog-service/catalog-service';
 import { CartPage } from '../pages/cart/cart';
+import { AddProductPage } from '../pages/add-product/add-product';
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
-    CartPage
+    CartPage,
+    AddProductPage
   ],
   imports: [
     BrowserModule,
@@ -27,7 +29,8 @@ import { CartPage } from '../pages/cart/cart';
   entryComponents: [
     MyApp,
     HomePage,
-    CartPage
+    CartPage,
+    AddProductPage
   ],
   providers: [
     StatusBar,

@@ -1,0 +1,35 @@
+<!--
+  Generated template for the AddProductPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>AddProduct</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <ion-content padding>
+        <form (ngSubmit)="onSubmit()" #addform="ngForm">
+          <div class="form-group">
+            <ion-label color="dark" floating>ชื่อสินค้า</ion-label>
+            <input type="text" class="form-control" id="Name" [(ngModel)]="Product.Name" name="Name">
+          </div>
+          <div class="form-group">
+              <ion-label color="dark" floating>รหัสสินค้า</ion-label>
+              <input type="text" class="form-control" id="SerialNumber" [(ngModel)]="Product.SerialNumber" name="SerialNumber">
+            </div>
+            <div class="form-group">
+                <ion-label color="dark" floating>ราคาสินค้า</ion-label>
+                <input type="text" class="form-control" id="UnitPrice" [(ngModel)]="Product.UnitPrice" name="UnitPrice">
+              </div>
+          <div class="text-center">
+            <button ion-button block>เพิ่ม</button>
+          </div>
+        </form>
+</ion-content>

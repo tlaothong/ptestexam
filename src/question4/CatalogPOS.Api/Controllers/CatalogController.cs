@@ -12,7 +12,7 @@ namespace CatalogPOS.Api.Controllers
     [ApiController]
     public class CatalogController : ControllerBase
     {
-        IEnumerable<Product> products = new List<Product>()
+        public static List<Product> products = new List<Product>()
         {
             new Product{ Name = "LG TV", SerialNumber = "LG1234", UnitPrice = 15900},
             new Product{ Name = "iPhone Z", SerialNumber = "PZ3452", UnitPrice = 39990},
@@ -35,39 +35,18 @@ namespace CatalogPOS.Api.Controllers
             {
                 selectedProducts = products.Where(it => it.UnitPrice.ToString().Contains(value.ToLower())).ToList();
             }
+            else{
+                selectedProducts = products.ToList();
+            }
 
             return selectedProducts;
         }
-        // GET api/values
-        [HttpGet]
-        public ActionResult<IEnumerable<string>> Get()
-        {
-            return new string[] { "value1", "value2" };
-        }
 
-        // GET api/values/5
-        [HttpGet("{id}")]
-        public ActionResult<string> Get(int id)
-        {
-            return "value";
-        }
-
-        // POST api/values
         [HttpPost]
-        public void Post([FromBody] string value)
+        public ActionResult<Product> AddProduct([FromBody]Product model)
         {
-        }
-
-        // PUT api/values/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
-        {
-        }
-
-        // DELETE api/values/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
+            products.Add(model);
+            return model;
         }
     }
 }
