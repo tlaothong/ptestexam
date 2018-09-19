@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 import { HttpClient } from '@angular/common/http';
 import { Product, GlobalVarible } from '../../app/models';
+import { ProductcreatePage } from '../productcreate/productcreate';
 
 @IonicPage()
 @Component({
@@ -15,8 +16,11 @@ export class ProductPage {
   constructor(public navCtrl: NavController, private http: HttpClient, public alertCtrl: AlertController, public navParams: NavParams) {
   }
 
+  Create() {
+    this.navCtrl.push(ProductcreatePage);
+  }
+
   Delete(id: string){
-    console.log(id);
     const confirm = this.alertCtrl.create({
       title: "Delete '" + this.Products.find(x => x.id == id).name + "' ?",
       buttons: [

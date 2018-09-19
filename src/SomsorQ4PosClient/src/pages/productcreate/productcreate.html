@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>productcreate</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <ion-item>
+      <ion-label floating>Name</ion-label>
+      <ion-input type="text" [(ngModel)]="Product.name"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Serial Number</ion-label>
+      <ion-input type="text" [(ngModel)]="Product.serialNumber"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Unit Price</ion-label>
+      <ion-input type="number" [(ngModel)]="Product.unitPrice"></ion-input>
+    </ion-item>
+  </ion-list>
+  <div padding>
+    <button ion-button block (click)="Create()">Create</button>
+  </div>
+</ion-content>
