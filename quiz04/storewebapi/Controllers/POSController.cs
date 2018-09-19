@@ -48,9 +48,13 @@ namespace storewebapi.Controllers
         }
 
         [HttpPost("purchaseorder")]
-        public void CreateNewPurchaseOrder([FromBody]CreateNewPurchaseOrderRequest req)
+        public CreateNewPurchaseOrderResponse CreateNewPurchaseOrder([FromBody]CreateNewPurchaseOrderRequest req)
         {
             purchasedList.Add(req);
+            return new CreateNewPurchaseOrderResponse
+            {
+                Message = "Complete"
+            };
         }
 
         [HttpGet("purchasedhistory")]

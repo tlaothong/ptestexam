@@ -16,11 +16,28 @@ export class HomePage {
   totalPrice: string;
   canSendAnOrder: boolean = false;
 
+  newProductName: string;
+  newProductPrice: number = 0;
+
   constructor(public navCtrl: NavController, public http: HttpClient) {
   }
 
   ionViewDidLoad() {
     this.reloadProducts();
+  }
+
+  createNewProduct() {
+    this.http.post<ProductInfo>("http://localhost:5000/api/POS",
+      {
+        "name": this.newProductName,
+        "price": this.newProductPrice,
+        "customTags": "string"
+      }).subscribe(
+        it => {
+          this.newProductName = "";
+          this.newProductPrice = 0;
+          this.reloadProducts();
+        });
   }
 
   reloadProducts() {

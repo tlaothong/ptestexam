@@ -2,7 +2,7 @@ namespace storewebapi.Models
 {
     public class PurchaseOrderInfo
     {
-        public string Id { get; set; }
-        public int Quantities { get; set; }
+        public string id { get; set; }
+        public int quantities { get; set; }
     }
 }

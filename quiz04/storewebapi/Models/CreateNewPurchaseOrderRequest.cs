@@ -4,7 +4,7 @@ namespace storewebapi.Models
 {
     public class CreateNewPurchaseOrderRequest
     {
-        public IEnumerable<PurchaseOrderInfo> Orders { get; set; }
+        public PurchaseOrderInfo[] Orders { get; set; }
     }
 
 }

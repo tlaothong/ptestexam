@@ -4,6 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { ProductInfo } from '../../models/productInfo';
 import { SelectedProductInfo } from '../../models/selectedProductInfo';
 import { PurchaseOrderInfo } from '../../models/purchaseOrderInfo';
+import { PurchaseOrderResponse } from '../../models/purchaseOrderResponse';
 
 @Component({
   selector: 'purchaseOrder',
@@ -40,12 +41,15 @@ export class PurchaseOrderPage {
   purchaseOrder() {
     if (this.isAlreadySendAnOder) return;
 
-    this.http.post("http://localhost:5001/api/POS/purchaseorder",
+    this.http.post<PurchaseOrderResponse>("http://localhost:5001/api/POS/purchaseorder",
       {
-        orders: this.products,
+        orders: JSON.stringify(this.products),
       }).subscribe(
         it => {
+          console.log(it)
           this.message = "Completed";
+        }, err => {
+          console.log(err);
         });
   }
 

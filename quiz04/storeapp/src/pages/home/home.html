@@ -7,6 +7,21 @@
 </ion-header>
 
 <ion-content padding>
+  <ion-card>
+    <ion-list>
+      <ion-item>
+        <ion-label fixed>Name</ion-label>
+        <ion-input type="name" [(ngModel)]="newProductName"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label fixed>Price</ion-label>
+        <ion-input type="number" [(ngModel)]="newProductPrice"></ion-input>
+      </ion-item>
+      <ion-item>
+        <button ion-button (click)="createNewProduct()">Add new product</button>
+      </ion-item>
+    </ion-list>
+  </ion-card>
   * You can click on your products you want to add them for send a purchase order.
   <ion-list>
     <ion-item *ngIf="!products">
