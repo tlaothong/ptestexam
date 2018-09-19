@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Ionic Blank
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <p text-center>{{numberLottary}}</p>
+  <p text-center>The winner is</p>
+  <div *ngFor="let Thewinner of winner" text-center>
+    {{Thewinner.username}} 
+  </div>
+  <div text-center>
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+
+          <ion-item>
+            <ion-label stacked>Username</ion-label>
+            <ion-input [(ngModel)]="username" type="text" placeholder="Input your Username"></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label stacked>Number</ion-label>
+            <ion-input [(ngModel)]="number" type="text" placeholder="Input your Number"></ion-input>
+          </ion-item>
+          <button ion-button outline block (click)="AddLottary()">Add</button>
+          <button ion-button outline color="secondary" block (click)="Start()">Start</button>
+          <button ion-button outline color="secondary" block (click)="goBmi()">BMI</button>
+          <button ion-button outline color="secondary" block (click)="goCate()">Catalog</button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+</ion-content>

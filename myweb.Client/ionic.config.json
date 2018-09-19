@@ -1,0 +1,7 @@
+{
+  "name": "myweb.Client",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}
