@@ -11,7 +11,7 @@
         <th class="col-md-3">Unit Price</th>
         <th>Add to Cart</th>
     </tr>
-    @foreach(var item in Model)
+    @foreach (var item in Model)
     {
         <tr>
             <td>@item.name</td>
@@ -25,3 +25,25 @@
         </tr>
     }
 </table>
+
+<h4>Add new item to Catalog</h4>
+<form action="/Home/AddNewItem" method="Post">
+    <table class="table table-striped">
+        <tr>
+            <th class="col-md-3">Name</th>
+            <th class="col-md-3">Serial Number</th>
+            <th class="col-md-3">Unit Price</th>
+            <th>Add to Cart</th>
+        </tr>
+        <tr>
+            <td><input type="text" name="name" /></td>
+            <td><input type="text" name="serial" /></td>
+            <td><input type="number" name="price" /></td>
+            <td>
+                <button type="submit" class="btn btn-primary">
+                    <span class="glyphicon glyphicon-floppy-saved" aria-hidden="true"></span> Add
+                </button>
+            </td>
+        </tr>
+    </table>
+</form>

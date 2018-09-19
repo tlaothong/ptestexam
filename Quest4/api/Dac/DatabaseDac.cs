@@ -23,7 +23,12 @@ namespace api.Dac
             ItemCollection = database.GetCollection<Item>("Item");
             CartItemCollection = database.GetCollection<CartItem>("CartItem");
         }
-        
+
+        public void CreateNewItem(Item document)
+        {
+            ItemCollection.InsertOne(document);
+        }
+
         public List<Item> ItemList(Expression<Func<Item, bool>> expression)
         {
             return ItemCollection.Find(expression).ToList();

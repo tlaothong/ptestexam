@@ -18,6 +18,19 @@ namespace api.Controllers
             this.DBDac = new DatabaseDac();
         }
 
+        [HttpGet("{name}/{serial}/{price}")]
+        public void Create(string name, string serial, double price)
+        {
+            var item = new Item
+            {
+                _id = Guid.NewGuid().ToString(),
+                name = name,
+                serial = serial,
+                price = price
+            };
+            this.DBDac.CreateNewItem(item);
+        }
+
         [HttpGet]
         public List<Item> GetItems()
         {
