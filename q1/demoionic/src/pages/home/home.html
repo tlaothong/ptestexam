@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Ionic Blank
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <h4>BMI Calculator</h4>
+
+
+  <form (ngSubmit)="getBMI()" #BMIForm="ngForm">
+    <div class="form-group">
+      <label for="weight">Weight</label>
+      <input type="number" class="form-control" id="weight"
+      required
+      [(ngModel)]="weight" name="weight"
+      #id="ngModel">
+      <label for="weight">Height</label>
+      <input type="number" class="form-control" id="height"
+      required
+      [(ngModel)]="height" name="height"
+      #id="ngModel">
+    </div>
+
+    <button type="submit" class="btn btn-success btn-block" [disabled]="!BMIForm.form.valid">Submit</button>
+  </form>
+  <h4>
+      {{mytext}}
+    </h4>
+    <h4>
+        {{mymessage}}
+    </h4>
+</ion-content>
