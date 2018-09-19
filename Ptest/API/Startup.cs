@@ -33,7 +33,7 @@ namespace API
             {
                 app.UseDeveloperExceptionPage();
             }
-
+            app.UseCors(b => b.WithOrigins("*").AllowAnyMethod().AllowAnyHeader());
             app.UseMvc();
         }
     }
