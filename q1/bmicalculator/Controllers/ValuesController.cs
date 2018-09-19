@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using bmicalculator.Models;
 using Microsoft.AspNetCore.Mvc;
 
 
@@ -12,28 +13,17 @@ namespace bmicalculator.Controllers
     {
         
         [HttpGet("{weight}/{height}")]
-        public String Get(string weight,string height)        
+        public BMIClass Calculate(double weight,double height)
         {
-            return weight+height;
-        }
-        
-        [HttpGet]
-        public String Get()        
-        {
-            return "Hello";
-        }
-        
-        [HttpGet("{weight}/{height}")]
-        public string Calculate2(double weight,double height)
-        {        
-            return weight+height+"Hell";
-        }
-
-        [HttpGet("{weight}/{height}")]
-        public double Calculate(double weight,double height)
-        {
-            double mybmi = (weight/Math.Pow(height,2))*703;;
-            return mybmi;
+            double maxAvg = 25;
+            double minAvg = 18.5; 
+            double mybmi = Math.Ceiling((weight/Math.Pow((height/100),2) )* 100) / 100;            
+            BMIClass result = new BMIClass();            
+            result.Bmi = mybmi;
+            if (mybmi>=minAvg&&mybmi<=maxAvg) result.Message = "You're within the normal weight range";
+            else if (mybmi<minAvg) result.Message = "You're underweight. You should consult your doctor!";
+            else result.Message = "You're overweight. You should consult your doctor!";
+            return result;
         }
     }
     

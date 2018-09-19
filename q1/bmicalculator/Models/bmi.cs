@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace bmicalculator.Models
 {
-    public class BMIc
+    public class BMIClass
     {
         public double Bmi { get; set; }
         public string Message {get; set;}
