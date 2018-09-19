@@ -1,0 +1,14 @@
+C:\Users\Maximoff\Desktop\lab\ptestexam\myapi\bin\Debug\netcoreapp2.1\myapi.deps.json
+C:\Users\Maximoff\Desktop\lab\ptestexam\myapi\bin\Debug\netcoreapp2.1\myapi.runtimeconfig.json
+C:\Users\Maximoff\Desktop\lab\ptestexam\myapi\bin\Debug\netcoreapp2.1\myapi.runtimeconfig.dev.json
+C:\Users\Maximoff\Desktop\lab\ptestexam\myapi\bin\Debug\netcoreapp2.1\myapi.dll
+C:\Users\Maximoff\Desktop\lab\ptestexam\myapi\bin\Debug\netcoreapp2.1\myapi.pdb
+C:\Users\Maximoff\Desktop\lab\ptestexam\myapi\obj\Debug\netcoreapp2.1\myapi.csprojAssemblyReference.cache
+C:\Users\Maximoff\Desktop\lab\ptestexam\myapi\obj\Debug\netcoreapp2.1\myapi.csproj.CoreCompileInputs.cache
+C:\Users\Maximoff\Desktop\lab\ptestexam\myapi\obj\Debug\netcoreapp2.1\myapi.RazorAssemblyInfo.cache
+C:\Users\Maximoff\Desktop\lab\ptestexam\myapi\obj\Debug\netcoreapp2.1\myapi.RazorAssemblyInfo.cs
+C:\Users\Maximoff\Desktop\lab\ptestexam\myapi\obj\Debug\netcoreapp2.1\myapi.AssemblyInfoInputs.cache
+C:\Users\Maximoff\Desktop\lab\ptestexam\myapi\obj\Debug\netcoreapp2.1\myapi.AssemblyInfo.cs
+C:\Users\Maximoff\Desktop\lab\ptestexam\myapi\obj\Debug\netcoreapp2.1\myapi.RazorTargetAssemblyInfo.cache
+C:\Users\Maximoff\Desktop\lab\ptestexam\myapi\obj\Debug\netcoreapp2.1\myapi.dll
+C:\Users\Maximoff\Desktop\lab\ptestexam\myapi\obj\Debug\netcoreapp2.1\myapi.pdb
