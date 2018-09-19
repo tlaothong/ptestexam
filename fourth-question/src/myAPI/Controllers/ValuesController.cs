@@ -12,21 +12,27 @@ namespace myAPI.Controllers
     [ApiController]
     public class ValuesController : ControllerBase
     {
-        public static List<Product> _myProducts;
-
-        public ValuesController()
-        {
-            _myProducts = new List<Product>
-            {
-                new Product { Id = "p01", Name = "LG TV", SerialNumber = "LG1234", Price = 15900 },
-                new Product { Id = "p02", Name = "iPhone Z", SerialNumber = "PZ3452", Price = 39990 },
-            };
-        }
+        public static List<Product> _myProducts = new List<Product>();
 
         [HttpGet]
         public List<Product> GetProducts()
         {
             return _myProducts;
+        }
+
+        [HttpPost]
+        public bool RegisterProduct([FromBody]Product model)
+        {
+            const int minimumPrice = 0;
+            var isValid = model != null &&
+             !string.IsNullOrWhiteSpace(model.Name) &&
+             !string.IsNullOrWhiteSpace(model.SerialNumber) &&
+              model.Price > minimumPrice;
+            if (!isValid) return false;
+
+            model.Id = Guid.NewGuid().ToString();
+            _myProducts.Add(model);
+            return true;
         }
 
         [HttpGet("{key}/{quantity}")]

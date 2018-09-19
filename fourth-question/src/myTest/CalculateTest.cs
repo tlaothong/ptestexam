@@ -1,6 +1,7 @@
 using System;
 using Xunit;
 using myAPI.Controllers;
+using myAPI.Models;
 using System.Linq;
 
 namespace myTest
@@ -12,6 +13,8 @@ namespace myTest
         public CalculateTest()
         {
             _myApi = new ValuesController();
+            _myApi.RegisterProduct(new Product { Id = "p01", Name = "LG TV", SerialNumber = "LG1234", Price = 15900 });
+            _myApi.RegisterProduct(new Product { Id = "p02", Name = "iPhone Z", SerialNumber = "PZ3452", Price = 39990 });
         }
 
         [Theory]
