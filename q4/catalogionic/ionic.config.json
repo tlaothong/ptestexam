@@ -1,0 +1,7 @@
+{
+  "name": "catalogionic",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}

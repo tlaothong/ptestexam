@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Catalog</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <h4 class="text-center" style="color:chocolate;">Catalog</h4>
+    <div ion-item style="background:burlywood;">
+        <div class="col-xs-4 text-left" style="color:black;">Name</div>
+        <div class="col-xs-4 text-center" style="color:black">Serial</div>
+        <div class="col-xs-4 text-right" style="color:black">Price</div>
+      </div>
+    <div ion-item *ngFor="let item of items">
+      <div class="col-xs-4 text-left" style="color:black">{{item.name}}</div>
+      <div class="col-xs-4 text-center" style="color:black">{{item.serial}}</div>
+      <div class="col-xs-4 text-right" style="color:black">{{item.price}}</div>
+    </div>
+</ion-content>
