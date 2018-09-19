@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Picking a Winner
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <p>
+    the government lottery office for the event Digital Thailand 2020.
+  </p>
+
+  
+  <button ion-button color="secondary" (click)="Start()">Start</button>
+
+  <ion-list>
+    The winner is: 
+    <ion-item *ngFor="let it of winners">
+      <ion-label >Name: {{ it.name }}</ion-label>
+      <ion-label >LuckyNumber: {{ it.luckyNumber }}</ion-label>
+    </ion-item>
+  </ion-list>
+
+</ion-content>
