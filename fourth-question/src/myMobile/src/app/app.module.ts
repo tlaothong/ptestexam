@@ -8,12 +8,14 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { PurchasePage } from '../pages/purchase/purchase';
+import { RegisterProductPage } from '../pages/register-product/register-product';
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
-    PurchasePage
+    PurchasePage,
+    RegisterProductPage
   ],
   imports: [
     BrowserModule,
@@ -24,7 +26,8 @@ import { PurchasePage } from '../pages/purchase/purchase';
   entryComponents: [
     MyApp,
     HomePage,
-    PurchasePage
+    PurchasePage,
+    RegisterProductPage
   ],
   providers: [
     StatusBar,

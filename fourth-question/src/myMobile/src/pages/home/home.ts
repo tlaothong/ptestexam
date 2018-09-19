@@ -3,6 +3,7 @@ import { NavController } from 'ionic-angular';
 import { HttpClient } from '@angular/common/http';
 
 import { PurchasePage } from '../purchase/purchase';
+import { RegisterProductPage } from '../register-product/register-product';
 
 @Component({
   selector: 'page-home',
@@ -14,7 +15,7 @@ export class HomePage {
   constructor(public navCtrl: NavController, private httpClient: HttpClient) {
   }
 
-  ionViewDidLoad() {
+  ionViewDidEnter(){
     this.httpClient.get("https://localhost:5001/api/Values/GetProducts")
       .subscribe((data: any) => {
         this.model = data;
@@ -22,8 +23,25 @@ export class HomePage {
         console.log("Home Error: " + JSON.stringify(error));
       });
   }
+  doRefresh(refresher) {
+    setTimeout(() => {
 
-  purchase(){
+      this.httpClient.get("https://localhost:5001/api/Values/GetProducts")
+        .subscribe((data: any) => {
+          this.model = data;
+        }, error => {
+          console.log("Home Error: " + JSON.stringify(error));
+        });
+
+      refresher.complete();
+    }, 2000);
+  }
+
+  registerproduct() {
+    this.navCtrl.push(RegisterProductPage);
+  }
+
+  purchase() {
     this.navCtrl.push(PurchasePage);
   }
 

@@ -1,0 +1,28 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Register Product</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <form (ngSubmit)="registerproduct()">
+    <ion-item>
+      <ion-label>Name</ion-label>
+      <ion-input type="text" [(ngModel)]="model.name" name="name"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Serial Number</ion-label>
+      <ion-input type="text" [(ngModel)]="model.serialnumber" name="serialnumber"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Price</ion-label>
+      <ion-input type="number" [(ngModel)]="model.price" name="price"></ion-input>
+    </ion-item>
+    <button ion-button type="submit" block>Register</button>
+  </form>
+
+</ion-content>
