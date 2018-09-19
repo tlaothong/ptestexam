@@ -40,6 +40,12 @@ namespace Somsor.Q4.Pos.Api
                 app.UseHsts();
             }
 
+            app.UseCors(builder =>
+                builder.WithOrigins("*")
+                .AllowAnyMethod()
+                .AllowAnyHeader()
+            );
+
             app.UseHttpsRedirection();
             app.UseMvc();
         }

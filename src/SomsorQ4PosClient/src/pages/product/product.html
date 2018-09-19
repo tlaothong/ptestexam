@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>product</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="Create()">
+        <ion-icon name="add-circle"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list *ngIf="Products">
+    <ion-item ion-item *ngFor="let s of Products">
+      <img col-3 item-start src="https://static1.squarespace.com/static/52b6128ce4b067a0f5987a3a/t/531e0c0de4b089910ebb2224/1394478094498/Product_icon.png"
+      /> {{s.name}}
+      <br /> Serial: {{s.serialNumber}}
+      <br /> Unit price: {{s.unitPrice}}
+      <button (click)="Delete(s.id)">del</button>
+    </ion-item>
+  </ion-list>
+</ion-content>

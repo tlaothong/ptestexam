@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Somsor.Q4.Pos.Api.Models;
 
 namespace Somsor.Q4.Pos.Api.Controllers
 {
@@ -19,7 +20,7 @@ namespace Somsor.Q4.Pos.Api.Controllers
         }
 
         [HttpGet("{id}")]
-        public ActionResult<Product> Get(int id)
+        public ActionResult<Product> Get(string id)
         {
             return Products.FirstOrDefault(x => x.Id == id);
         }
@@ -32,7 +33,7 @@ namespace Somsor.Q4.Pos.Api.Controllers
         }
 
         [HttpPost("{id}")]
-        public void Edit(int id, [FromBody]Product request)
+        public void Edit(string id, [FromBody]Product request)
         {
             var product = Products.FirstOrDefault(x => x.Id == id);
             product.Name = request.Name;
@@ -41,7 +42,7 @@ namespace Somsor.Q4.Pos.Api.Controllers
         }
 
         [HttpPost("{id}")]
-        public void Delete(int id)
+        public void Delete(string id)
         {
             Products = Products.Where(x => x.Id != id).ToList();
         }
@@ -51,21 +52,25 @@ namespace Somsor.Q4.Pos.Api.Controllers
         {
             Products = new List<Product>{
                 new Product{
+                    Id = Guid.NewGuid().ToString(),
                     Name = "LG TV",
                     SerialNumber = "LG1234",
                     UnitPrice = 15900,
                 },
                 new Product{
+                    Id = Guid.NewGuid().ToString(),
                     Name = "iPhone Z",
                     SerialNumber = "PZ3452",
                     UnitPrice = 39990,
                 },
                 new Product{
+                    Id = Guid.NewGuid().ToString(),
                     Name = "mi Pro 5",
                     SerialNumber = "PRO258",
                     UnitPrice = 6900,
                 },
                 new Product{
+                    Id = Guid.NewGuid().ToString(),
                     Name = "V9",
                     SerialNumber = "V93654",
                     UnitPrice = 9999,
