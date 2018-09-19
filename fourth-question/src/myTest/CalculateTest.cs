@@ -15,14 +15,17 @@ namespace myTest
         }
 
         [Theory]
-        [InlineData(new string[] { "p01" }, 15900)]
-        [InlineData(new string[] { "p02" }, 39990)]
-        [InlineData(new string[] { "p01", "p02" }, 55890)]
-        public void Calculate_Success(string[] productIds, int expectedPrice)
+        [InlineData("LG", 15900)]
+        [InlineData(" TV", 15900)]
+        [InlineData("1234", 15900)]
+        [InlineData("iPhone ", 39990)]
+        [InlineData("z", 39990)]
+        [InlineData("z345", 39990)]
+        [InlineData("39990", 39990)]
+        public void Calculate_Success(string productId, int expectedPrice)
         {
-            var products = _myApi.GetProducts();
-            var result = products.Where(it => productIds.Contains(it.Id)).Sum(it => it.Price);
-            Assert.Equal(expectedPrice, result);
+            var result = _myApi.GetProduct(productId);
+            Assert.Equal(expectedPrice, result.Price);
         }
 
         [Theory]
@@ -31,18 +34,6 @@ namespace myTest
         [InlineData(null)]
         [InlineData("productid-does-not-exist")]
         public void Calculate_Failed(string productId)
-        {
-            var products = _myApi.GetProducts();
-            var result = products.FirstOrDefault(it => it.Id == productId);
-            Assert.Null(result);
-        }
-
-        [Theory]
-        [InlineData(" ")]
-        [InlineData("")]
-        [InlineData(null)]
-        [InlineData("productid-does-not-exist")]
-        public void CalculateOneProduct_Failed(string productId)
         {
             var result = _myApi.GetProduct(productId);
             Assert.Null(result);

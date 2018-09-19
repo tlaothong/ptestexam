@@ -23,31 +23,23 @@ namespace myAPI.Controllers
             };
         }
 
-        [HttpGet]
-        public List<Product> GetProducts()
-        {
-            return _myProducts;
-        }
-
         [HttpGet("{id}")]
-        public Product GetProduct(string id)
+        public Product GetProduct(string key)
         {
-            var isValid = !string.IsNullOrWhiteSpace(id);
-            if (isValid) return null;
-            return _myProducts.FirstOrDefault(it => it.Id == id);
+            var isValid = !string.IsNullOrWhiteSpace(key);
+            if (!isValid) return null;
+
+            int.TryParse(key, out int convertToPrice);
+            Product result = null;
+            if (convertToPrice > 0)
+            {
+                result = _myProducts.FirstOrDefault(it => it.Price == convertToPrice);
+            }
+            
+            if (result != null) return result;
+            else return _myProducts.FirstOrDefault(it => it.Name.Contains(key, StringComparison.CurrentCultureIgnoreCase) || it.SerialNumber.Contains(key, StringComparison.CurrentCultureIgnoreCase));
+
         }
 
-        // [HttpPost]
-        // public bool RegisterProduct([FromBody]Product model)
-        // {
-        //     var isValid =
-        //     model != null &&
-        //     !string.IsNullOrWhiteSpace(model.Name);
-        //     if (!isValid) return false;
-
-        //     model.Id = Guid.NewGuid().ToString();
-        //     _myProducts.Add(model);
-        //     return true;
-        // }
     }
 }
