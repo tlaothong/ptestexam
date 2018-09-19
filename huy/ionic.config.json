@@ -1,0 +1,7 @@
+{
+  "name": "huy",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}

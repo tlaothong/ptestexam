@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Ionic Blank
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding text-center>
+  <ion-item>
+    <ion-label stacked>Username</ion-label>
+    <ion-input type="text" placeholder="Username" [(ngModel)]="name"></ion-input>
+  </ion-item>
+  <ion-item>
+      <ion-label stacked>Your Number</ion-label>
+      <ion-input  type="number" placeholder="0" [(ngModel)]="number"></ion-input>
+    </ion-item>
+    <br><br>
+  <button ion-button (click)="clickRand()">Start</button>
+  <br><br>
+  <div>
+      <label style="font-size: 20px">Your Number : {{number}}</label>
+    </div>
+    <br><br>
+  <div>
+  <label style="font-size: 20px">{{rand}}</label>
+</div>
+</ion-content>
