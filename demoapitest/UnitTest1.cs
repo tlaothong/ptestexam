@@ -14,5 +14,14 @@ namespace demoapitest
             Assert.Equal(194,b);
 
         }
+        [Theory]
+        [InlineData(3,174,177)]
+        public void test2 (double weight,double high,double expecteted)
+        {
+             var a = new CalculatorLogic();
+            var b = a.Calculator(weight,high);
+            Assert.Equal(expecteted,b);
+
+        }
     }
 }
