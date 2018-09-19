@@ -1,45 +1,53 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using myAPI.Models;
 
 namespace myAPI.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/[controller]/[action]")]
     [ApiController]
     public class ValuesController : ControllerBase
     {
-        // GET api/values
+        public static List<Product> _myProducts;
+
+        public ValuesController()
+        {
+            _myProducts = new List<Product>
+            {
+                new Product { Id = "p01", Name = "LG TV", SerialNumber = "LG1234", Price = 15900 },
+                new Product { Id = "p02", Name = "iPhone Z", SerialNumber = "PZ3452", Price = 39990 },
+            };
+        }
+
         [HttpGet]
-        public ActionResult<IEnumerable<string>> Get()
+        public List<Product> GetProducts()
         {
-            return new string[] { "value1", "value2" };
+            return _myProducts;
         }
 
-        // GET api/values/5
         [HttpGet("{id}")]
-        public ActionResult<string> Get(int id)
+        public Product GetProduct(string id)
         {
-            return "value";
+            var isValid = !string.IsNullOrWhiteSpace(id);
+            if (isValid) return null;
+            return _myProducts.FirstOrDefault(it => it.Id == id);
         }
 
-        // POST api/values
-        [HttpPost]
-        public void Post([FromBody] string value)
-        {
-        }
+        // [HttpPost]
+        // public bool RegisterProduct([FromBody]Product model)
+        // {
+        //     var isValid =
+        //     model != null &&
+        //     !string.IsNullOrWhiteSpace(model.Name);
+        //     if (!isValid) return false;
 
-        // PUT api/values/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
-        {
-        }
-
-        // DELETE api/values/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
-        }
+        //     model.Id = Guid.NewGuid().ToString();
+        //     _myProducts.Add(model);
+        //     return true;
+        // }
     }
 }
