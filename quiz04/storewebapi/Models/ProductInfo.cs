@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+
 namespace storewebapi.Models
 {
     public class ProductInfo
@@ -5,6 +7,6 @@ namespace storewebapi.Models
         public string Id { get; set; }
         public string Name { get; set; }
         public double Price { get; set; }
-        public System.Collections.Generic.IDictionary<string, string> CustomTags { get; set; }
+        public IList<TagInfo> CustomTags { get; set; }
     }
 }

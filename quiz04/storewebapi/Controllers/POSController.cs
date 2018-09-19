@@ -12,6 +12,7 @@ namespace storewebapi.Controllers
     public class POSController : ControllerBase
     {
         private static IList<ProductInfo> products = new List<ProductInfo>();
+        private static IList<CreateNewPurchaseOrderRequest> purchasedList = new List<CreateNewPurchaseOrderRequest>();
 
         [HttpGet]
         public IEnumerable<ProductInfo> Get()
@@ -20,32 +21,42 @@ namespace storewebapi.Controllers
         }
 
         [HttpPost]
-        public ProductInfo CreateNewProduct(ProductInfoRequest data)
+        public ProductInfo CreateNewProduct([FromBody]ProductInfoRequest data)
         {
             var customTagGroups = data.CustomTags.Split(',', StringSplitOptions.RemoveEmptyEntries);
-            var customTagQry = customTagGroups.Select(it =>
-            {
-                var tagData = it.Split(':', StringSplitOptions.RemoveEmptyEntries);
-                return new KeyValuePair<string, string>(tagData[0], tagData[1]);
-            });
-
-            var customTags = new Dictionary<string, string>();
-            foreach (var item in customTagQry)
-            {
-                if (customTags.ContainsValue(item.Key)) continue;
-                customTags.Add(item.Key, item.Value);
-            }
+            // var customTagQry = customTagGroups.Select(it =>
+            // {
+            //     var tagData = it.Split(':', StringSplitOptions.RemoveEmptyEntries);
+            //     return new TagInfo
+            //     {
+            //         Name = tagData[0],
+            //         Value = tagData[1]
+            //     };
+            // });
 
             var newProduct = new ProductInfo
             {
                 Id = Guid.NewGuid().ToString(),
                 Name = data.Name,
                 Price = data.Price,
-                CustomTags = customTags
+                CustomTags = Enumerable.Empty<TagInfo>().ToList()
+                // CustomTags = customTagQry.ToList()
             };
 
             products.Add(newProduct);
             return newProduct;
+        }
+
+        [HttpPost("purchaseorder")]
+        public void CreateNewPurchaseOrder([FromBody]CreateNewPurchaseOrderRequest req)
+        {
+            purchasedList.Add(req);
+        }
+
+        [HttpGet("purchasedhistory")]
+        public IEnumerable<CreateNewPurchaseOrderRequest> GetPurchasedHistory()
+        {
+            return purchasedList;
         }
     }
 }

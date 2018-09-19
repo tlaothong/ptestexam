@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Purchase Order
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <ion-item>
+      These product will be send to create an order.
+    </ion-item>
+    <ion-item *ngFor="let it of selectedProducts">
+      <ion-label>{{ it.product.name }}</ion-label>
+      <ion-label>{{ it.product.price }}</ion-label>
+      <ion-label>{{ it.quantities }}</ion-label>
+      <ion-label>{{ it.quantities * it.product.price }}</ion-label>
+    </ion-item>
+  </ion-list>
+  <div>
+    {{ totalPrice }}
+  </div>
+  <button ion-button (click)="purchaseOrder()">Confirm</button>
+</ion-content>
