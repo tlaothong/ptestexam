@@ -24,7 +24,7 @@ namespace WebAPI.Controllers
         }
 
         [HttpGet]
-        public IEnumerable<Product> LisProduct()
+        public IEnumerable<Product> ListProduct()
         {
             var result = Collection.Find(std => true).ToList();
             return result;
