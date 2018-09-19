@@ -1,0 +1,7 @@
+{
+  "name": "bmimobile",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}
