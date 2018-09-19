@@ -29,7 +29,7 @@ namespace myAPI.Controllers
             return _myProducts;
         }
 
-        [HttpGet("{key}")]
+        [HttpGet("{key}/{quantity}")]
         public CalculateResult CalculateTotalPrice(string key, int quantity)
         {
             const int defaultReturnValue = 0;
