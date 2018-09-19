@@ -1,0 +1,56 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Ionic Blank
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-grid>
+
+    <ion-row>
+      <ion-col col-12>
+        <ion-item>
+          <ion-input type="number" placeholder="weight" [(ngModel)]="weight"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col col-12>
+        <ion-item>
+          <ion-input type="number" placeholder="height" [(ngModel)]="height"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col col-12>
+        <div class="buttonStyle">
+          <button ion-button round (click)="calBmi()">Calculate BMI</button>
+        </div>
+      </ion-col>
+
+    </ion-row>
+
+    <ion-row>
+      <ion-col col-12>
+        <div>
+          BMI : {{bmiM.bmi}}
+        </div>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col col-12>
+        <div>
+          Comment :
+        </div>
+        <div>
+          {{bmiM.bmiStatus}}
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
