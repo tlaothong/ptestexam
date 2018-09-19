@@ -1,0 +1,40 @@
+<!--
+  Generated template for the CatalogPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Catalog</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <div style="text-align: center">
+        <p>
+            แคตตาล็อก
+        </p>
+      </div>
+      <div style="text-align: center">
+        <ion-input [(ngModel)]="name" placeholder="ชื่อ"></ion-input>
+    
+        <ion-input [(ngModel)]="SerialNumber" placeholder="หมายเลขผลิตภัณฑ์"></ion-input>
+
+        <ion-input [(ngModel)]="UnitPrice" placeholder="ราคาต่อหน่วย"></ion-input>
+      </div>
+      <div style="text-align: center">
+        <p>*** กรุณากรอกข้อมูลทุกช่อง ***</p>
+      </div>
+      <br>
+    
+      <div style="text-align: center">
+        <button color="secondary" ion-button round>เพิ่มแคตตาล็อก</button>
+      </div>
+      <br>
+      <hr>
+      <div style="text-align: center">
+</ion-content>

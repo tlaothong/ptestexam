@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Ionic Blank
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <div style="text-align: center">
+    <p>
+      คำนวณค่า BMI ดัชนีมวลกาย
+    </p>
+  </div>
+  <div style="text-align: center">
+    <ion-input [(ngModel)]="Weight" placeholder="Weight"></ion-input>
+
+    <ion-input [(ngModel)]="Height" placeholder="Height"></ion-input>
+  </div>
+  <div style="text-align: center">
+    <p>กรุณากรอกข้อมูลทุกช่อง</p>
+  </div>
+  <br>
+
+  <div style="text-align: center">
+    <button color="secondary" ion-button round (click)="calculate()">Calculate</button>
+  </div>
+  <br>
+  <hr>
+  <div style="text-align: center">
+    {{BMI}} {{result}}
+    <br>
+    <br> {{str}}
+  </div>
+</ion-content>
