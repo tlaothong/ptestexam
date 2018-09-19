@@ -1,0 +1,50 @@
+<!--
+  Generated template for the AddcatalogPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>addcatalog</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-grid>
+
+    <ion-row>
+      <ion-col col-12>
+        <ion-item>
+          <ion-input type="number" placeholder="Name" [(ngModel)]="name"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col col-12>
+        <ion-item>
+          <ion-input type="number" placeholder="Serial Number" [(ngModel)]="senumber"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-12>
+        <ion-item>
+          <ion-input type="number" placeholder="Unit Price" [(ngModel)]="uprice"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-12>
+        <div>
+           <button ion-button full outline (click) = "addcatalog()">เพิ่มรายการ</button>
+        </div>
+         
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
