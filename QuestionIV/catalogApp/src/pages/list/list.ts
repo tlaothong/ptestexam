@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { NavController, NavParams, AlertController } from 'ionic-angular';
 import { Item, GlobalVarible } from '../../app/models';
+import { HomePage } from '../home/home';
 
 @Component({
   selector: 'page-list',
@@ -71,7 +72,8 @@ export class ListPage {
                   });
               }
             });
-            this.navCtrl.popToRoot();
+            
+            this.navCtrl.push(HomePage);
           }
         }
       ]
