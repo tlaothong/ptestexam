@@ -29,6 +29,7 @@ namespace Somsor.Q4.Pos.Api.Controllers
         public void Create([FromBody]Order request)
         {
             request.Id = Guid.NewGuid().ToString();
+            request.PurchaseDate = DateTime.Now;
             request.Products = request.Products.Where(x => x.PurchaseCount > 0).ToList();
             request.TotalPrice = request.Products.Sum(x => x.PurchaseCount * x.UnitPrice);
             Orders.Add(request);

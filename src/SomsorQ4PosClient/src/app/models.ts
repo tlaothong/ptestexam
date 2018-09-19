@@ -1,4 +1,5 @@
 import { HttpHeaders } from "@angular/common/http";
+import { DateTime } from "ionic-angular";
 
 export class Product {
     id: string;
@@ -13,6 +14,8 @@ export class ProductPurchase extends Product {
 
 export class Order {
     id: string;
+    purchaseDate: DateTime;
+    totalPrice: number;
     products: ProductPurchase[];
 }
 

@@ -1,6 +1,8 @@
 import { OrdercreatePage } from './../ordercreate/ordercreate';
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
+import { Order, GlobalVarible } from '../../app/models';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'page-home',
@@ -8,7 +10,9 @@ import { NavController } from 'ionic-angular';
 })
 export class HomePage {
 
-  constructor(public navCtrl: NavController) {
+  Orders: Order[];
+
+  constructor(public navCtrl: NavController, private http: HttpClient) {
 
   }
 
@@ -17,9 +21,9 @@ export class HomePage {
   }
 
   ionViewDidEnter() {
-    // this.http.get<Product[]>(GlobalVarible.host + "/api/Product/List")
-    //   .subscribe(data => {
-    //     this.Products = data;
-    //   });
+    this.http.get<Order[]>(GlobalVarible.host + "/api/Pos/List")
+      .subscribe(data => {
+        this.Orders = data;
+      });
   }
 }
