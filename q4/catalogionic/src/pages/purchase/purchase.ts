@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { Item } from '../../app/model';
+import { HttpClient } from '@angular/common/http';
 
 /**
  * Generated class for the PurchasePage page.
@@ -14,10 +16,18 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'purchase.html',
 })
 export class PurchasePage {
-
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  items: Item[];  
+  constructor(public navCtrl: NavController, public navParams: NavParams,private httpClient: HttpClient) {
   }
-
+  ionViewWillEnter(){
+    this.httpClient.get("http://localhost:8000/api/catalog/GetCatalogs")
+    .subscribe((data: any) => {
+      this.items = data;
+      //alert(JSON.stringify(data));
+    }, error => {
+      // If error
+    });
+  }
   ionViewDidLoad() {
     console.log('ionViewDidLoad PurchasePage');
   }

@@ -14,6 +14,21 @@
 
 
 <ion-content padding>
-    <img width="60" height="60" class="block-center center-block" src="http://icons.iconarchive.com/icons/icons8/android/512/Shopping-Buy-icon.png"/>
-
+    <img width="60" height="60" class="block-center center-block" src="http://icons.iconarchive.com/icons/icons8/android/512/Shopping-Buy-icon.png "/>
+    <h4 class="text-center" style="color:chocolate;">POS</h4>
+    <div ion-item style="background:burlywood;">
+        <div class="col-xs-4 text-left" style="color:black;">Name</div>
+        <div class="col-xs-4 text-center" style="color:black">Serial</div>
+        <div class="col-xs-4 text-right" style="color:black">Price</div>
+      </div>
+    <div ion-item *ngFor="let item of items">
+      <div class="col-xs-4 text-left" style="color:black">{{item.name}}</div>
+      <div class="col-xs-4 text-center" style="color:black">{{item.serial}}</div>
+      <div class="col-xs-4 text-right" style="color:black">{{item.price}}</div>
+    </div>
+    <h4>Summary : {{price}}</h4>
+    <div class="text-center">                
+        <button type="button" style="background:chocolate" ion-button round>Confirm</button>
+        <button type="button" style="background:white;color:black;" ion-button round>Clear</button>
+    </div>
 </ion-content>
