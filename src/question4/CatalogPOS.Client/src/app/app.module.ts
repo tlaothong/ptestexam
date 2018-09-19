@@ -9,11 +9,13 @@ import { FormsModule } from '@angular/forms';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { CatalogServiceProvider } from '../providers/catalog-service/catalog-service';
+import { CartPage } from '../pages/cart/cart';
 
 @NgModule({
   declarations: [
     MyApp,
-    HomePage
+    HomePage,
+    CartPage
   ],
   imports: [
     BrowserModule,
@@ -24,7 +26,8 @@ import { CatalogServiceProvider } from '../providers/catalog-service/catalog-ser
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage
+    HomePage,
+    CartPage
   ],
   providers: [
     StatusBar,

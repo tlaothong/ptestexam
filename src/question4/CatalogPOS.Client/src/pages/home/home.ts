@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { CatalogServiceProvider } from '../../providers/catalog-service/catalog-service';
+import { CartPage } from '../cart/cart';
 
 
 @Component({
@@ -33,6 +34,6 @@ export class HomePage {
 
   Buy(product: any)
   {
-
+    this.navCtrl.push(CartPage, product);
   }
 }
