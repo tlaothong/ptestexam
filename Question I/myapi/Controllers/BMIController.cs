@@ -33,7 +33,7 @@ namespace myapi.Controllers
             var resutl = "You're within the normal weight range.";
             var bmi = (weight/( Math.Pow(height, 2))) * 703;
             if (bmi >= 18.5 && bmi <= 25) {
-                resutl = "Your BMI : " + bmi;
+                resutl = "Your BMI : " + bmi.ToString("0.0");
             }
             return resutl;
         }
