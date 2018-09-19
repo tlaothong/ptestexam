@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using MultiplicationTable.Web.Models;
+using MultiplicationTable;
 
 namespace MultiplicationTable.Web.Controllers
 {
@@ -13,6 +14,15 @@ namespace MultiplicationTable.Web.Controllers
         public IActionResult Index()
         {
             return View();
+        }
+
+        [HttpPost]
+        public IActionResult Index(int InputNumber)
+        {
+            var tableGenerator = new TableGenerator();
+            var result = tableGenerator.Generate(InputNumber);
+            
+            return View(result);
         }
 
         public IActionResult About()
