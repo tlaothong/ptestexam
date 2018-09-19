@@ -20,7 +20,7 @@ export class ProductPage {
     this.navCtrl.push(ProductcreatePage);
   }
 
-  Delete(id: string){
+  Delete(id: string) {
     const confirm = this.alertCtrl.create({
       title: "Delete '" + this.Products.find(x => x.id == id).name + "' ?",
       buttons: [
@@ -42,6 +42,20 @@ export class ProductPage {
       ]
     });
     confirm.present();
+  }
+
+  Mock() {
+    this.http.get(GlobalVarible.host + "/api/Product/UseMockProducts")
+      .subscribe(data => {
+        this.ionViewDidEnter();
+      });
+  }
+
+  Reset() {
+    this.http.get(GlobalVarible.host + "/api/Product/Reset")
+      .subscribe(data => {
+        this.ionViewDidEnter();
+      });
   }
 
   ionViewDidEnter() {
