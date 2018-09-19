@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Winner Picker
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-list-header color="primary">Press to start random number and winner</ion-list-header>
+      <div class="row">
+          <div class="col"></div>
+          <div class="col">
+            <button ion-button block (click)="getWinner()">Start</button>
+          </div>
+          <div class="col"></div>
+        </div>
+        <ion-item *ngFor="let item of winner" color="light">
+          <ion-label color="primary">{{item.Username}}</ion-label>
+          <ion-label color="primary" text-right>{{item.PickNumber}}</ion-label>
+        </ion-item>
+        <ion-label text-center>{{message}}</ion-label>
+  </ion-list>
+</ion-content>

@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Home</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-list>
+        <ion-item>
+          <ion-label color="primary">Username</ion-label>
+          <ion-input placeholder="Username Input" [(ngModel)]="Username"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label color="primary">Pick Number</ion-label>
+          <ion-input placeholder="0 - 99" [(ngModel)]="Pick"></ion-input>
+        </ion-item>
+        <div class="row">
+          <div class="col"></div>
+          <div class="col">
+            <button ion-button block (click)="savePick()">Pick</button>
+          </div>
+          <div class="col"></div>
+        </div>
+      </ion-list>
+      <ion-label color="{{colorMessage}}">{{message}}</ion-label>
+</ion-content>

@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Picker List
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+      <ion-list-header color="dark">
+          <ion-label color="light">Picker name</ion-label>
+          <ion-label color="light" text-right>Pick number</ion-label>
+        </ion-list-header>
+    <ion-item *ngFor="let item of svc.Username" color="light">
+      <ion-label color="primary">{{item.Username}}</ion-label>
+      <ion-label color="primary" text-right>{{item.PickNumber}}</ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>
