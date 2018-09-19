@@ -1,0 +1,21 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Purchase</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+
+  <form (ngSubmit)="searchproduct()">
+    <ion-item>
+      <ion-label>Search</ion-label>
+      <ion-input type="text" [(ngModel)]="search" name="search"></ion-input>
+    </ion-item>
+      <button ion-button type="submit" block>
+        <ion-icon name="search"></ion-icon>
+      </button>
+  </form>
+
+</ion-content>
