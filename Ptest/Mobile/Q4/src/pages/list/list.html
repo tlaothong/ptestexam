@@ -9,15 +9,42 @@
 
 <ion-content>
   <ion-list>
-    <button ion-item *ngFor="let item of items" (click)="itemTapped($event, item)">
-      <ion-icon [name]="item.icon" item-start></ion-icon>
-      {{item.title}}
-      <div class="item-note" item-end>
-        {{item.note}}
-      </div>
-    </button>
+    <ion-list-header>
+        <ion-grid>
+            <ion-row>
+              <ion-col col-3>Name</ion-col>
+              <ion-col col-6>Serial Number</ion-col>
+              <ion-col col-3>Price</ion-col>
+            </ion-row>
+          </ion-grid>
+    </ion-list-header>
+    <ion-item>
+        <ion-grid>
+            <ion-row text-center>
+              <ion-col col-3>LG TV</ion-col>
+              <ion-col col-6>LG1234</ion-col>
+              <ion-col col-3>15,900</ion-col>
+            </ion-row>
+          </ion-grid>
+    </ion-item>
+    <ion-item>
+        <ion-grid>
+            <ion-row text-center>
+              <ion-col col-3>iPhone Z</ion-col>
+              <ion-col col-6>PZ3452</ion-col>
+              <ion-col col-3>39,990</ion-col>
+            </ion-row>
+          </ion-grid>
+    </ion-item>
   </ion-list>
-  <div *ngIf="selectedItem" padding>
-    You navigated here from <b>{{selectedItem.title}}</b>
-  </div>
+  <ion-footer>
+    <ion-toolbar>
+      <ion-grid>
+        <ion-row >
+          <ion-col col-9>จำนวนของทั้งหมด 2 ชิ้น</ion-col>
+          <ion-col col-3>55,800</ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-toolbar>
+  </ion-footer>
 </ion-content>
