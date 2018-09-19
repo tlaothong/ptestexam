@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MultiplicationTable.Test", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MultiplicationTable", "MultiplicationTable\MultiplicationTable.csproj", "{81E76008-028C-405A-AA04-2A7A65AD2E72}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MultiplicationTable.Web", "MultiplicationTable.Web\MultiplicationTable.Web.csproj", "{6CF2CB62-0421-4E21-841F-E7B1D61224AB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -44,5 +46,17 @@ Global
 		{81E76008-028C-405A-AA04-2A7A65AD2E72}.Release|x64.Build.0 = Release|Any CPU
 		{81E76008-028C-405A-AA04-2A7A65AD2E72}.Release|x86.ActiveCfg = Release|Any CPU
 		{81E76008-028C-405A-AA04-2A7A65AD2E72}.Release|x86.Build.0 = Release|Any CPU
+		{6CF2CB62-0421-4E21-841F-E7B1D61224AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6CF2CB62-0421-4E21-841F-E7B1D61224AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6CF2CB62-0421-4E21-841F-E7B1D61224AB}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{6CF2CB62-0421-4E21-841F-E7B1D61224AB}.Debug|x64.Build.0 = Debug|Any CPU
+		{6CF2CB62-0421-4E21-841F-E7B1D61224AB}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{6CF2CB62-0421-4E21-841F-E7B1D61224AB}.Debug|x86.Build.0 = Debug|Any CPU
+		{6CF2CB62-0421-4E21-841F-E7B1D61224AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6CF2CB62-0421-4E21-841F-E7B1D61224AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6CF2CB62-0421-4E21-841F-E7B1D61224AB}.Release|x64.ActiveCfg = Release|Any CPU
+		{6CF2CB62-0421-4E21-841F-E7B1D61224AB}.Release|x64.Build.0 = Release|Any CPU
+		{6CF2CB62-0421-4E21-841F-E7B1D61224AB}.Release|x86.ActiveCfg = Release|Any CPU
+		{6CF2CB62-0421-4E21-841F-E7B1D61224AB}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
