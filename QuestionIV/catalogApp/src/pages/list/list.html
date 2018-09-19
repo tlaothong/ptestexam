@@ -1,0 +1,74 @@
+<ion-header>
+  <ion-toolbar color="danger">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>POS</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-item no-padding>
+    <ion-row>
+      <ion-col col-3 style="text-align: center">
+        <b>Select</b>
+      </ion-col>
+      <ion-col col-4 style="text-align: left ">
+        <b>Name</b>
+      </ion-col>
+      <ion-col col-4 style="text-align: left;padding-left: 10px">
+        <b>Unit Price</b>
+      </ion-col>
+
+    </ion-row>
+  </ion-item>
+
+  <ion-item *ngFor="let item of items" style="padding-left: 30px">
+    <ion-checkbox checked="false" (click)="Check(item)"></ion-checkbox>
+    <ion-label>{{item.name}}</ion-label>
+    <ion-label>{{item.price}}</ion-label>
+  </ion-item>
+
+
+</ion-content>
+
+<ion-footer>
+  <ion-grid style="height: 65px; text-align: center" no-padding>
+    <ion-row style="height: 65px;">
+
+      <ion-col col-8 style="padding-top: 5px; background-color: #222;color: white;text-align: center">
+        <ion-row>
+          <ion-col col-1></ion-col>
+          <ion-col col-3>
+            Amount
+          </ion-col>
+          <ion-col col-8>
+            Total price
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col col-1></ion-col>
+          <ion-col col-3>
+            {{amount}}
+          </ion-col>
+          <ion-col col-8>
+            ฿ {{totalPrice}}
+          </ion-col>
+        </ion-row>
+
+
+      </ion-col>
+
+
+      <ion-col col-4 style="padding-top: 7px;background-color: #f53d3d;text-align: center" (click)="Purchase()">
+        <button style="background-color: unset;color: white">
+          <ion-row>
+            <h6>Purchase</h6>
+          </ion-row>
+        </button>
+      </ion-col>
+
+    </ion-row>
+  </ion-grid>
+</ion-footer>

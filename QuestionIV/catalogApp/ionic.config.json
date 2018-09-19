@@ -1,0 +1,7 @@
+{
+  "name": "catalogApp",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}

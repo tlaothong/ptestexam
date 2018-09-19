@@ -1,0 +1,44 @@
+<ion-header>
+
+  <ion-navbar color="danger">
+    <ion-title>Edit</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-row style="text-align: left">
+    <ion-col col-2 style="align-self: center">
+      Name :
+    </ion-col>
+    <ion-col col-10>
+      <ion-item>
+        <ion-input type="text" placeholder="{{item.name}}" [(ngModel)]="item.name"></ion-input>
+      </ion-item>
+    </ion-col>
+    <ion-col col-2 style="align-self: center">
+      Serial :
+    </ion-col>
+    <ion-col col-10>
+      <ion-item>
+        <ion-input type="text" placeholder="{{item.serialNumber}}" [(ngModel)]="item.serialNumber"></ion-input>
+      </ion-item>
+    </ion-col>
+    <ion-col col-2 style="align-self: center">
+      Price :
+    </ion-col>
+    <ion-col col-10>
+      <ion-item>
+        <ion-input type="number" placeholder="{{item.price}}" [(ngModel)]="item.price"></ion-input>
+      </ion-item>
+    </ion-col>
+  </ion-row>
+
+  <div padding>
+    <button ion-button block round (click)="EditItem()">Confirm</button>
+  </div>
+
+
+</ion-content>
