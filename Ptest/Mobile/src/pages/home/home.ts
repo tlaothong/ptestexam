@@ -6,32 +6,36 @@ import { NavController } from 'ionic-angular';
   templateUrl: 'home.html'
 })
 export class HomePage {
-  weight: any={};
-  height: any={};
+  weight: any = {};
+  height: any = {};
   data: string;
-  bmi: any;
-
+  bmi: any = {};
+  ibs: any = {};
+  xxx: number;
 
   constructor(public navCtrl: NavController) {
 
   }
 
-  result(){
+  result() {
     // var bmi = (weight / ((height / 100) * (height / 100)));
- var xxx = (this.weight/((this.height/100)*(this.height/100)))
- if(xxx>=30){
-this.data = "Obese 3";
- }else if(xxx>=25 && xxx>30){
-  this.data = "Obese 2";
- }else if(xxx>=23 && xxx>25){
-  this.data = "Obese 1";
- }else if(xxx>=18.5 && xxx>23){
-  this.data = "Normal weight";
- }else {
-  this.data = "Underweight";
- }
- this.bmi = xxx.toFixed(2);
- console.log(xxx);
+    // var bmi = ((weight * 2.20462262) / (ibs * ibs)) * 703;
+    this.ibs = this.height * 0.393;
+    this.xxx = ((this.weight*2.2)*703) / ((this.ibs) * (this.ibs))
+    this.bmi = this.xxx.toFixed(2);
+    if (this.bmi > 25)
+    {
+        this.data =  "You are somewhat overweight.";
+    }
+    else if (this.bmi < 18.5)
+    {
+      this.data = "You are somewhat underweight.";
+    }
+    else if (this.bmi > 18.5 && this.bmi < 25)
+    {
+      this.data = "Congratulations! You are within a healthy weight range.";
+    }
+    console.log(JSON.stringify( this.bmi));
   }
 
 }
