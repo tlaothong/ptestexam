@@ -1,0 +1,7 @@
+{
+  "name": "bmicalculator",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}

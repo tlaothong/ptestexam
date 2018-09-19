@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Ionic Blank
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-content padding>
+    <ion-list>
+      <ion-item>
+        <ion-label fixed>Your Weight</ion-label>
+        <ion-input type="name" [(ngModel)]="weight"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label fixed>Your Hight</ion-label>
+        <ion-input type="name" [(ngModel)]="hight"></ion-input>
+      </ion-item>
+      <ion-item>
+        <button ion-button (click)="Calculate()">Calculator</button>
+      </ion-item>
+      <ion-item>
+        <ion-label fixed>Result</ion-label>
+        <ion-label fixed>{{result}}</ion-label>
+      </ion-item>
+    </ion-list>
+</ion-content>
