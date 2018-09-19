@@ -11,13 +11,16 @@
 
 <ion-content padding>
   <ion-list *ngIf="Products">
-    <ion-item ion-item *ngFor="let s of Products">
-      <img col-3 item-start src="https://static1.squarespace.com/static/52b6128ce4b067a0f5987a3a/t/531e0c0de4b089910ebb2224/1394478094498/Product_icon.png"
-      /> {{s.name}}
-      <br /> Serial: {{s.serialNumber}}
-      <br /> Unit price: {{s.unitPrice}}
-      <button (click)="Delete(s.id)">del</button>
-    </ion-item>
+    <div ion-row>
+      <span col-5>Name</span>
+      <span col-4>Serial</span>
+      <span col-3 text-right>Price</span>
+    </div>
+    <div ion-row *ngFor="let s of Products">
+      <span col-5><button (click)="Delete(s.id)">-</button> {{s.name}}</span>
+      <span col-4>{{s.serialNumber}}</span>
+      <span col-3 text-right>{{s.unitPrice}}</span>
+    </div>
   </ion-list>
   <a class="small" (click)="Mock()">Mock</a>
   <a class="small" (click)="Reset()">Reset</a>
