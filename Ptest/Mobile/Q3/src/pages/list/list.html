@@ -9,15 +9,41 @@
 
 <ion-content>
   <ion-list>
-    <button ion-item *ngFor="let item of items" (click)="itemTapped($event, item)">
-      <ion-icon [name]="item.icon" item-start></ion-icon>
-      {{item.title}}
-      <div class="item-note" item-end>
-        {{item.note}}
-      </div>
-    </button>
+      <ion-list-header>
+          <ion-grid>
+              <ion-row>
+                <ion-col col-2>ลำดับ</ion-col>
+                <ion-col col-5 >เลข</ion-col>
+                <ion-col col-5>วันที่ซื้อ</ion-col>
+              </ion-row>
+          </ion-grid>         
+        </ion-list-header>
+    <ion-grid>
+      <ion-item>
+        <ion-row>
+          <ion-col col-2>1.</ion-col>
+          <ion-col col-5>55</ion-col>
+          <ion-col col-5>19/9/2018</ion-col>
+        </ion-row>
+      </ion-item>
+    </ion-grid>
+    <ion-grid>
+        <ion-item>
+          <ion-row>
+            <ion-col col-2>2.</ion-col>
+            <ion-col col-5>00</ion-col>
+            <ion-col col-5>18/9/2018</ion-col>
+          </ion-row>
+        </ion-item>
+      </ion-grid>
+      <ion-grid>
+          <ion-item>
+            <ion-row>
+              <ion-col col-2>3.</ion-col>
+              <ion-col col-5>04</ion-col>
+              <ion-col col-5>17/9/2018</ion-col>
+            </ion-row>
+          </ion-item>
+        </ion-grid>
   </ion-list>
-  <div *ngIf="selectedItem" padding>
-    You navigated here from <b>{{selectedItem.title}}</b>
-  </div>
 </ion-content>
