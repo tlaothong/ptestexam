@@ -1,0 +1,26 @@
+﻿@model IEnumerable<Somsor.Q3.Lottery.Models.Gambler>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<br /><br /><br />
+<h1>THE WINNING NUMBER IS: @ViewBag.ranNum</h1>
+<br />
+<fieldset>
+    <legend>Winning Gamblers</legend>
+    <table class="table">
+        <thead>
+            <th class="col-sm-3">Name</th>
+            <th class="col-sm-3">Number</th>
+        </thead>
+        @foreach(var item in Model)
+        {
+            <tr>
+                <td>@item.Name</td>
+                <td>@item.Number</td>
+            </tr>
+        }
+    </table>
+</fieldset>
+<i><a class="btn btn-primary" asp-action="Index">Back</a></i>
+<i><a class="btn btn-danger" asp-action="Reset" onclick="return confirm('Reset ?');">Reset</a></i>

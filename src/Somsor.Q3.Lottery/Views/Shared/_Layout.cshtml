@@ -41,6 +41,20 @@
     <partial name="_CookieConsentPartial" />
 
     <div class="container body-content">
+        @if (TempData.Any(x => x.Key == "ErrorMessage"))
+        {
+            <div class="alert alert-warning fade in alert-dismissable">
+                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                @Html.Raw(TempData.First(x => x.Key == "ErrorMessage").Value)
+            </div>
+        }
+        @if (TempData.Any(x => x.Key == "Message"))
+        {
+            <div class="alert alert-success fade in alert-dismissable">
+                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                @Html.Raw(TempData.First(x => x.Key == "Message").Value)
+            </div>
+        }
         @RenderBody()
         <hr />
         <footer>
