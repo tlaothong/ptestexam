@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-navbar color="secondary">
+    <ion-title>
+      Calculate BMI
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  
+  <ion-item padding>
+    <ion-input type="number" placeholder="Input your weight : kg" [(ngModel)]="weight"></ion-input>
+  </ion-item>
+  <ion-item padding>
+    <ion-input type="number" placeholder="Input your height : cm" [(ngModel)]="height"></ion-input>
+  </ion-item>
+
+  <button ion-button block round (click)="CalcBMI()" padding>Calculate</button>
+
+  <div padding style="padding-top: 50px" *ngIf="bmi != null"><h5>Your BMI: {{bmi}}</h5></div>
+  <div padding><h5>{{output}}</h5></div>
+
+</ion-content>
