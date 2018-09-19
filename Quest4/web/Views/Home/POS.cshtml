@@ -1,0 +1,53 @@
+﻿@model web.Models.Cart
+@{
+    ViewData["Title"] = "POS";
+}
+<h2>Store's The POS</h2>
+    @if(Model.items.Count != 0){
+<table class="table table-striped">
+    <tr>
+        <th class="col-md-2">Name</th>
+        <th class="col-md-2">Serial Number</th>
+        <th class="col-md-2">Unit Price</th>
+        <th>Amount</th>
+        <th class="col-md-2">Price</th>
+        <th>Remove</th>
+    </tr>
+    @foreach(var item in Model.items)
+    {
+        <tr>
+            <td>@item.name</td>
+            <td>@item.serial</td>
+            <td>@item.price.ToString("##,###")</td>
+            <td>
+                <a type="button" class="btn btn-danger" asp-action="SubItem" asp-route-id="@item._id">
+                    <span class="glyphicon glyphicon-minus" aria-hidden="true"></span>
+                </a>
+                @item.amount
+                <a type="button" class="btn btn-danger" asp-action="AddItem" asp-route-id="@item._id">
+                    <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                </a>
+            </td>
+            <td>@((item.price * item.amount).ToString("##,###"))</td>
+            <td>
+                <a type="button" class="btn btn-danger" asp-action="RemoveItem" asp-route-id="@item._id">
+                    <span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Remove
+                </a>
+            </td>
+        </tr>
+    }
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="text-right">Total Cost</td>
+        <td>@Model.totalprice</td>
+        <td>
+            <button type="button" class="btn btn-success">
+                <span class="glyphicon glyphicon-refresh" aria-hidden="true"></span> Refresh
+            </button>
+        </td>
+    </tr>
+</table>
+    }
+    <h3>Add product to Cart to calculate price.</h3>

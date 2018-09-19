@@ -1,0 +1,27 @@
+﻿@model List<web.Models.Item>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<h2>Store's The Catalog</h2>
+<table class="table table-striped">
+    <tr>
+        <th class="col-md-3">Name</th>
+        <th class="col-md-3">Serial Number</th>
+        <th class="col-md-3">Unit Price</th>
+        <th>Add to Cart</th>
+    </tr>
+    @foreach(var item in Model)
+    {
+        <tr>
+            <td>@item.name</td>
+            <td>@item.serial</td>
+            <td>@item.price.ToString("##,###")</td>
+            <td>
+                <a type="button" class="btn btn-primary" asp-action="AddItem" asp-route-id="@item._id">
+                    <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> Add
+                </a>
+            </td>
+        </tr>
+    }
+</table>
