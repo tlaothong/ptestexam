@@ -8,7 +8,7 @@ namespace bmiapi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class bnicalculate : ControllerBase
+    public class bmicalculate : ControllerBase
     {
         [HttpGet]
         public double Get(double weight, double height)
