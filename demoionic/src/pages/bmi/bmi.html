@@ -1,0 +1,35 @@
+<!--
+  Generated template for the BmiPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>BMI</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding> 
+  <ion-list>
+    <ion-item>
+      <ion-label fixed>Weight</ion-label>
+      <ion-input type="name" [(ngModel)]="data1"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label fixed>High</ion-label>
+      <ion-input type="name" [(ngModel)]="data2"></ion-input>
+    </ion-item>
+    <ion-item>
+      <button ion-button (click)="Add()">results\\\\\\\\\\\\\\\\\\\\\</button>
+    </ion-item>
+    <ion-item>
+      <ion-label fixed>Result</ion-label>
+      <ion-label fixed>{{result}}</ion-label>
+    </ion-item>
+  </ion-list>
+
+</ion-content>
