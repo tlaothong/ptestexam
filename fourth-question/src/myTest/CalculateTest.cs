@@ -15,28 +15,30 @@ namespace myTest
         }
 
         [Theory]
-        [InlineData("LG", 15900)]
-        [InlineData(" TV", 15900)]
-        [InlineData("1234", 15900)]
-        [InlineData("iPhone ", 39990)]
-        [InlineData("z", 39990)]
-        [InlineData("z345", 39990)]
-        [InlineData("39990", 39990)]
-        public void Calculate_Success(string productId, int expectedPrice)
+        [InlineData("LG", 1, 15900)]
+        [InlineData(" TV", 1, 15900)]
+        [InlineData("1234", 2, 31800)]
+        [InlineData("iPhone ", 1, 39990)]
+        [InlineData("z", 1, 39990)]
+        [InlineData("z345", 4, 159960)]
+        [InlineData("39990", 1, 39990)]
+        public void Calculate_Success(string productId, int quantity, int expectedPrice)
         {
-            var result = _myApi.GetProduct(productId);
-            Assert.Equal(expectedPrice, result.Price);
+            var result = _myApi.CalculateTotalPrice(productId, quantity);
+            Assert.Equal(expectedPrice, result);
         }
 
         [Theory]
-        [InlineData(" ")]
-        [InlineData("")]
-        [InlineData(null)]
-        [InlineData("productid-does-not-exist")]
-        public void Calculate_Failed(string productId)
+        [InlineData(" ", 1)]
+        [InlineData("", 1)]
+        [InlineData(null, 1)]
+        [InlineData("productid-does-not-exist", 1)]
+        [InlineData("LG", 0)]
+        public void Calculate_Failed(string productId, int quantity)
         {
-            var result = _myApi.GetProduct(productId);
-            Assert.Null(result);
+            var result = _myApi.CalculateTotalPrice(productId, quantity);
+            const int expectedPrice = 0;
+            Assert.Equal(expectedPrice, result);
         }
     }
 }

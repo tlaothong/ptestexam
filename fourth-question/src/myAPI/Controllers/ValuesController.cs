@@ -23,21 +23,29 @@ namespace myAPI.Controllers
             };
         }
 
-        [HttpGet("{id}")]
-        public Product GetProduct(string key)
+        [HttpGet]
+        public List<Product> GetProducts()
         {
-            var isValid = !string.IsNullOrWhiteSpace(key);
-            if (!isValid) return null;
+            return _myProducts;
+        }
+
+        [HttpGet("{key}")]
+        public int CalculateTotalPrice(string key, int quantity)
+        {
+            const int defaultReturnValue = 0;
+            const int minimumQuantity = 1;
+            var isValid = !string.IsNullOrWhiteSpace(key) && quantity >= minimumQuantity;
+            if (!isValid) return defaultReturnValue;
 
             int.TryParse(key, out int convertToPrice);
             Product result = null;
-            if (convertToPrice > 0)
+            if (convertToPrice >= minimumQuantity)
             {
                 result = _myProducts.FirstOrDefault(it => it.Price == convertToPrice);
             }
-            
-            if (result != null) return result;
-            else return _myProducts.FirstOrDefault(it => it.Name.Contains(key, StringComparison.CurrentCultureIgnoreCase) || it.SerialNumber.Contains(key, StringComparison.CurrentCultureIgnoreCase));
+
+            if (result == null) result = _myProducts.FirstOrDefault(it => it.Name.Contains(key, StringComparison.CurrentCultureIgnoreCase) || it.SerialNumber.Contains(key, StringComparison.CurrentCultureIgnoreCase));
+            return result != null ? result.Price * quantity : defaultReturnValue;
 
         }
 
