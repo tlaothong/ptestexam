@@ -1,14 +1,43 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Ionic Blank
+      Catalog
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+  <form (ngSubmit)="onSubmit()" #searchform="ngForm">
+    <ion-label color="dark" floating>ค้นหา</ion-label>
+    <div class="form-group">
+      <select class="form-control" id="SearchKey" name="SearchKey" [(ngModel)]="SearchKey">
+        <option *ngFor="let SearchOption of SearchOptions" [value]="SearchOption.value">{{SearchOption.key}}</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <ion-label color="dark" floating>คำที่ต้องการค้น</ion-label>
+      <input type="text" class="form-control" id="SearchText" [(ngModel)]="SearchText" name="SearchText">
+    </div>
+    <div class="text-center">
+      <button ion-button round>ค้นหา</button>
+    </div>
+  </form>
+  <ion-list>
+        <ion-row>
+          <ion-col width-33>ชื่อสินค้า</ion-col>
+          <ion-col width-33>รหัสสินค้า</ion-col>
+          <ion-col width-33>ราคาสินค้า</ion-col>
+          <ion-col width-33>สั่งซื้อ</ion-col>
+        </ion-row>
+  </ion-list>
+  <ion-list>
+    <ion-item *ngFor="let product of Products">
+      <ion-row>
+        <ion-col width-33>{{product.Name}}</ion-col>
+        <ion-col width-33>{{product.SerialNumber}}</ion-col>
+        <ion-col width-33>{{product.UnitPrice}}</ion-col>
+        <ion-col width-33><button ion-button round (click)="Buy(product)">ซื้อ</button></ion-col>
+      </ion-row>
+    </ion-item>
+  </ion-list>
 </ion-content>
