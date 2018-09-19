@@ -10,6 +10,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using Newtonsoft.Json.Serialization;
 
 namespace CatalogPOS.Api
 {
@@ -25,7 +26,9 @@ namespace CatalogPOS.Api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            services.AddCors();
+            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1)
+            .AddJsonOptions(options => options.SerializerSettings.ContractResolver = new DefaultContractResolver());;
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -40,6 +43,11 @@ namespace CatalogPOS.Api
                 app.UseHsts();
             }
 
+            app.UseCors(builder =>
+               builder.WithOrigins("*")
+               .AllowAnyHeader()
+               .AllowAnyMethod()
+            );
             app.UseHttpsRedirection();
             app.UseMvc();
         }
