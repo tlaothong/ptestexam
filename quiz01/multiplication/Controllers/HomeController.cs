@@ -12,7 +12,16 @@ namespace multiplication.Controllers
     {
         public IActionResult Index()
         {
-            return View();
+            return View(new MultiplicationData());
+        }
+
+        [HttpPost]
+        public IActionResult Index(int inputNumber)
+        {
+            var logic = new MultiplicationLogic();
+            var result = logic.GetMultiplicationTable(inputNumber);
+            ViewBag.MultiplicationTable = result;
+            return View(new MultiplicationData{ InputNumber = inputNumber});
         }
 
         public IActionResult About()
