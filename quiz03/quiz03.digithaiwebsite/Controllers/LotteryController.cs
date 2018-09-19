@@ -12,12 +12,14 @@ namespace quiz03.digithaiwebsite.Controllers
     public class LotteryController : ControllerBase
     {
         private static Dictionary<string, GuessInfo> AllGuessesData = new Dictionary<string, GuessInfo>();
-        private static string AdminUsername = "miolynet";
+        private static string AdminUsername = "admin";
         private static bool IsClosed;
 
         [HttpPost]
         public CreateNewGuessResult Post([FromBody] GuessInfo value)
         {
+            if (IsClosed) return new CreateNewGuessResult { ErrorMessage = "This game is already closed." };
+
             var isDataCorrect = value != null && !string.IsNullOrEmpty(value.Name);
             if (!isDataCorrect)
                 return new CreateNewGuessResult { ErrorMessage = $"Some input data is not valid." };

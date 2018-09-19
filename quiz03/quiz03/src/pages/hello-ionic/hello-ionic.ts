@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { CreateNewGuessResult } from '../../Models/CreateNewGuessResult';
+import { LoginPage } from '../login/login';
+import { NavController } from 'ionic-angular';
 
 @Component({
   selector: 'page-hello-ionic',
@@ -13,11 +15,16 @@ export class HelloIonicPage {
   message: string;
   isSubmited: boolean;
 
-  constructor(public http: HttpClient) {
+  constructor(public http: HttpClient, public navCtrl: NavController) {
+    if (LoginPage.username == undefined || LoginPage.username == "") {
+      this.navCtrl.setRoot(LoginPage);
+      return;
+    }
+    this.name = LoginPage.username;
   }
 
   SubmitGuess() {
-    if (this.name == undefined || this.name == "") {
+    if (LoginPage.username == undefined || LoginPage.username == "") {
       this.message = "Please input your name before submit!";
       return;
     }
@@ -25,14 +32,17 @@ export class HelloIonicPage {
     this.isSubmited = true;
     this.http.post<CreateNewGuessResult>("https://localhost:5001/api/Lottery",
       {
-        "name": this.name,
+        "name": LoginPage.username,
         "guessNo": this.guessNo
       }).subscribe(
         it => {
           if (it.errorMessage == null) {
             this.message = "Complete";
           }
-          else this.message = it.errorMessage;
+          else {
+            this.isSubmited = false;
+            this.message = it.errorMessage;
+          }
         });
   }
 
