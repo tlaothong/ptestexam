@@ -6,23 +6,23 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  <ion-content padding>
+<ion-content padding class="bg-style">
+  
     <ion-list>
-      <ion-item>
-        <ion-label fixed>Your Weight</ion-label>
+      <ion-item class="bg-styles">
+        <ion-label color="primary" fixed>Your weight</ion-label>
         <ion-input type="name" [(ngModel)]="weight"></ion-input>
       </ion-item>
-      <ion-item>
-        <ion-label fixed>Your Hight</ion-label>
+      <ion-item class="bg-styles">
+        <ion-label color="primary" fixed>Your hight</ion-label>
         <ion-input type="name" [(ngModel)]="hight"></ion-input>
       </ion-item>
-      <ion-item>
-        <button ion-button (click)="Calculate()">Calculator</button>
+      <ion-item text-center class="bg-styles">
+        <button  ion-button round ion-button (click)="Calculate()">Calculator</button>
       </ion-item>
-      <ion-item>
-        <ion-label fixed>Your BMI: </ion-label>
-        <ion-label fixed>{{result}}</ion-label>        
+      <ion-item class="bg-styles">
+        <ion-label color="primary" fixed>Your BMI: </ion-label>
+        <ion-label color="danger" fixed>{{result}}</ion-label>        
       </ion-item>
     </ion-list>
 </ion-content>
