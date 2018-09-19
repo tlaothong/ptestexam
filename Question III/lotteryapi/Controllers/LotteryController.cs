@@ -24,13 +24,13 @@ namespace lotteryapi.Controllers
 
         // GET api/values
         [HttpGet]
-        public ActionResult<Winner> PickWinner()
+        public ActionResult<IEnumerable<Player>> PickWinner()
         {
             //All player that has register should guessed number
-            /*if (players.Any(x=>x.LuckyNumber == null))
+            if (players.Any(x=>x.LuckyNumber == null))
             {
                 throw new Exception("Some player not guess the number yet");
-            }*/
+            }
 
             List<Player> winners = new List<Player>();
             Random rnd = new Random();
@@ -41,19 +41,18 @@ namespace lotteryapi.Controllers
                 winners = players.Where(x=>x.LuckyNumber == winnerNumber).ToList();
             }  
             
-            Winner w = new Winner{ WinnerNumber = winnerNumber, Players = winners };
-            return w;
+            return winners;
         }
 
         // POST api/values
         [HttpPost]
         public ActionResult<IEnumerable<Player>> Register([FromBody] Player pl)
         {
-            if (players.Any(x=>x.Name == pl.Name))
+            if (players.Any(x=>x.Name.ToLower() == pl.Name.Trim().ToLower()) || string.IsNullOrEmpty(pl.Name))
             {
                 throw new Exception("Duplicate name!");
             }
-            players.Add(new Player { Name = pl.Name, LuckyNumber = null });
+            players.Add(new Player { Name = pl.Name.Trim(), LuckyNumber = null });
             return players.ToList();
         }
 
@@ -66,11 +65,6 @@ namespace lotteryapi.Controllers
         }
     }
 
-public  class Winner 
-{
-    public int WinnerNumber { get; set; } 
-    public List<Player> Players { get; set; }
-}
     public  class Player
     {
         public string Name { get; set; }

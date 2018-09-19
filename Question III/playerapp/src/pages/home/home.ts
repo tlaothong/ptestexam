@@ -20,6 +20,9 @@ export class HomePage {
 
   RegisterName()
   {
+    if((!this.name || this.name == undefined || this.name == "" || this.name.length == 0))
+    { alert("Please input your name") }
+    else{
     this.http.post<string>("http://localhost:5000/api/lottery/register/",
       {
         Name : this.name,
@@ -27,13 +30,14 @@ export class HomePage {
       it => {
           // SUCCESS: Do something          
           console.log(it);
+          this.navCtrl.push(GuessnumberPage, { name: this.name });
       }, 
       error => {
           // ERROR: Do something
           console.log(error);
-          alert(error);                
+          alert("Duplicate name!");                
       });
 
-    this.navCtrl.push(GuessnumberPage, { name: this.name });
+    }
   }
 }

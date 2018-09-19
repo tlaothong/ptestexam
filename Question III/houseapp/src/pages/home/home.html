@@ -1,7 +1,7 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Picking a Winner
+      Picking a Winner (Admin app)
     </ion-title>
   </ion-navbar>
 </ion-header>
@@ -12,14 +12,15 @@
   </p>
 
   
+  <div align="center">
   <button ion-button color="secondary" (click)="Start()">Start</button>
 
   <ion-list>
-    The winner is: 
+    The winner number is: {{ winnernumber }} 
     <ion-item *ngFor="let it of winners">
       <ion-label >Name: {{ it.name }}</ion-label>
-      <ion-label >LuckyNumber: {{ it.luckyNumber }}</ion-label>
     </ion-item>
   </ion-list>
 
+</div>
 </ion-content>
