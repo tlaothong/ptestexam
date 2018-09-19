@@ -16,7 +16,7 @@ export class HomePage {
   }
 
   GetTable() {
-    this.http.get<number[][]>("https://localhost:5001/api/Values/GetTable/" + this.n)
+    this.http.get<number[][]>("http://node21.codenvy.io:47777/api/Values/GetTable/" + this.n)
       .subscribe(data => {
         this.table = data;        
       });
