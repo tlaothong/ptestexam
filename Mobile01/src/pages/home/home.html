@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Ionic Blank
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-item>
+    <ion-label>weight</ion-label>
+    <ion-input type="number" [(ngModel)]="weight"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>height</ion-label>
+    <ion-input type="number" [(ngModel)]="height"></ion-input>
+  </ion-item>
+  <div text-center>
+    <button ion-button (click)="Cal()">Submit</button>
+  </div>
+  <!-- <label> {{ bmi }} </label> -->
+  <p>Your BMI: {{ bmi }} </p>
+  <p> {{ guild }} </p>
+</ion-content>
