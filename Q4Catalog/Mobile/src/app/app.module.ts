@@ -11,7 +11,8 @@ import { HomePage } from '../pages/home/home';
 @NgModule({
   declarations: [
     MyApp,
-    HomePage
+    HomePage,
+    AddproductPage
   ],
   imports: [
     BrowserModule,
@@ -21,7 +22,8 @@ import { HomePage } from '../pages/home/home';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage
+    HomePage,
+    AddproductPage
   ],
   providers: [
     StatusBar,

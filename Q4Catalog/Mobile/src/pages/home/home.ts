@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { HttpClient } from '@angular/common/http';
+import { AddproductPage } from '../pages/addproduct/addproduct';
 
 @Component({
   selector: 'page-home',
@@ -21,5 +22,10 @@ export class HomePage {
         error => {
           alert("Error: " + error + "\nError message: " + error.message + "\nError result: " + error.error)
         });
+  }
+  
+  addProduct()
+  {
+      this.navCtrl.push(AddproductPage)
   }
 }
