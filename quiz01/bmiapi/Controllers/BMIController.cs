@@ -11,7 +11,7 @@ namespace bmiapi.Controllers
     [ApiController]
     public class BMIController : ControllerBase
     {
-        [HttpGet]
+        [HttpGet("{weight}/{height}")]
         public BMIResponse Get(int weight, int height)
         {
             const int MinimumWeight = 1;
