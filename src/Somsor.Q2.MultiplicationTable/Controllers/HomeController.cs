@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Somsor.Q2.MultiplicationTable.Engines;
 using Somsor.Q2.MultiplicationTable.Models;
 
 namespace Somsor.Q2.MultiplicationTable.Controllers
@@ -14,7 +15,8 @@ namespace Somsor.Q2.MultiplicationTable.Controllers
         {
             if(n.HasValue && n > 0)
             {
-                var result = Enumerable.Range(1, n.Value).Select(x => Enumerable.Range(1, n.Value).Select(y => y * x));
+                var engine = new MultiplicationTableEngine();
+                var result = engine.GenerateMultiplicationTable(n.Value);
                 return View(result);
             }
             return View();
