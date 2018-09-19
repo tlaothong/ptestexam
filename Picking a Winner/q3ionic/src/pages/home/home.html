@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+        Lottory
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <h1>Lottory</h1>
+
+  <ion-item>
+    <ion-label floating>Name</ion-label>
+    <ion-input type="text" [(ngModel)]="name"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label floating>Number</ion-label>
+    <ion-input type="text" [(ngModel)]="number"></ion-input>
+  </ion-item>
+  <br><br>
+
+  <button ion-button color="light" (click)="Start()" style=" float: center">Start</button>
+
+
+</ion-content>
