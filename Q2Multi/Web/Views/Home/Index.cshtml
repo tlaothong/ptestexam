@@ -1,0 +1,16 @@
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div>
+  <form asp-controller="Home" asp-action="GetMulti" method="get" asp-route-keyword="">
+       <div class="input-group">
+           <input type="search" class="form-control" placeholder="Search" id="keyword" name="keyword" />
+           <div class="input-group-btn">
+               <button class="btn btn-default" type="submit">
+                   <span class="glyphicon">ค้นหา</span>
+               </button>
+           </div>
+       </div>
+   </form>
+</div>

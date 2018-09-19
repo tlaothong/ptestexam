@@ -1,0 +1,35 @@
+@model IEnumerable<Web.Controllers.PersonAndChoose>
+@{
+  ViewData["Title"] = "Home Page";
+}
+
+<div style="text-align:center;padding:20px 300px">
+ <img src="http://pngimg.com/uploads/coin/coin_PNG36871.png" width="150"/>
+    <h2 style="color:	#FFDF00">Lotto App</h2>
+    
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col" style="color:white">Name</th>
+          <th scope="col" style="color:white">Number</th>
+        </tr>
+      </thead>
+      <tbody>
+        @foreach(var item in Model)
+        {
+          <tr>
+          <td style="text-align:left;color:white">@item.Name</td>
+          <td style="text-align:left;color:white">@item.Num</td>
+        </tr>     
+        }
+
+      </tbody>
+    </table>
+    <div>
+        <div class="col-md-4 col-md-offset-4">
+            <a class="btn btn-primary btn-block" href="@Url.Action("ResultLotto", "Home")" style="background-color:#FFDF00; color:#000000"><b>Start</b></a>
+        </div>
+    </div>
+   
+   
+</div>

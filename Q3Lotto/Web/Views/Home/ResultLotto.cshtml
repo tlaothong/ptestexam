@@ -1,0 +1,21 @@
+@model IEnumerable<Web.Controllers.PersonAndChoose>
+@{
+  ViewData["Title"] = "Home Page";
+}
+
+<div style="padding:30px 300px;text-align:center">
+    <h4 style="color:#FFDF00">A number is @ViewBag.number</h4>
+    @if(Model == null || Model.Count() == 0)
+    {
+         <img src="https://clipart.info/images/ccovers/1499793247facebook-sad-emoji-like-png.png" width="200"/>
+        <h1 style="color:#EEEEEE">No Winner !!!</h1>
+    }
+    else
+    {
+           <img src="https://www.freepngimg.com/download/winner/7-2-winner-png-file.png" width="400"/>
+             @foreach(var item in Model)
+        {
+                <h1 style="color:#FFDF00">@item.Name</h1>
+        }
+    }
+</div>

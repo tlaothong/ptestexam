@@ -14,5 +14,44 @@
 
 
 <ion-content padding>
+<h4 style="margin:10px 0px">Productt ทั้งหมด</h4>
+<ion-grid padding>
+  <ion-row  style="background-color:#eeeeee">
+        <ion-col col-4>
+            <b>Name</b>
+        </ion-col>
+        <ion-col col-3>
+           <b>Serial</b>
+        </ion-col>
+        <ion-col col-4 style="text-align: right">
+           <b>Unit Price</b>
+        </ion-col>
+  </ion-row>
+  <div *ngFor="let item of productList" style="border-bottom: 1px solid #eeeeee">
+        <ion-row>
+            <ion-col col-4>
+                 <p>{{item.name}}</p>
+            </ion-col>
+            <ion-col col-3>
+               <p>{{item.serialNumber}}</p>
+            </ion-col>
+            <ion-col col-4 style="text-align: right">
+                <p>{{item.unitPrice}}</p>
+            </ion-col>
+      </ion-row>
+      <ion-row>
+            <ion-col col-2>
+                <button ion-button (click)="add(item)">+</button>
+            </ion-col>
+             <ion-col col-6 style="margin:10px 0px">
+                <p>Total :  {{item.qun}}</p>
+            </ion-col>
+      </ion-row>
+  </div>
+</ion-grid>
+
+  <p>Total price : {{taotalPrice}}</p>
+
 
 </ion-content>
+

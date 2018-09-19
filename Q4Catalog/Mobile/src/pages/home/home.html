@@ -7,28 +7,28 @@
 </ion-header>
 
 <ion-content padding>
-<h4 style="margin:10px 00px">Product ของคุณ</h4>
+<h4 style="margin:10px 00px">Productt ทั้งหมด</h4>
 <div>
     <button ion-button (click)="addProduct()">+ Add</button>
-    <button ion-button color="secondary" (click)="buyProduct()">$ Buy</button>
+    <button ion-button color="secondary" (click)="buyProduct()">$ Calculate pay</button>
 </div>
 <ion-grid padding>
   <ion-row  style="background-color:#eeeeee">
-        <ion-col col-4>
+        <ion-col col-5>
             <b>Name</b>
         </ion-col>
-        <ion-col col-4>
-           <b>Serial Number</b>
+        <ion-col col-3>
+           <b>Serial</b>
         </ion-col>
         <ion-col col-4 style="text-align: right">
            <b>Unit Price</b>
         </ion-col>
   </ion-row>
   <ion-row *ngFor="let item of productList"  style="border-bottom: 1px solid #eeeeee">
-        <ion-col col-4>
+        <ion-col col-5>
              <p>{{item.name}}</p>
         </ion-col>
-        <ion-col col-4>
+        <ion-col col-3>
            <p>{{item.serialNumber}}</p>
         </ion-col>
         <ion-col col-4 style="text-align: right">

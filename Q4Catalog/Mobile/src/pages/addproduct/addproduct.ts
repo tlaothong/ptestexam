@@ -29,7 +29,7 @@ export class AddproductPage {
      let option = {
         headers: new HttpHeaders({ 'Content-Type': 'application/json' })
     };
-    this.http.post("http://node19.codenvy.io:47107/api/Product/AddProduct", 
+    this.http.post("http://node17.codenvy.io:55659/api/Product/AddProduct", 
     {name : this.productName, serialNumber: this.productSerial,unitPrice: this.productPrice},
     option)
       .subscribe(data => {

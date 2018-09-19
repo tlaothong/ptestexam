@@ -16,7 +16,7 @@ export class HomePage {
   }
   
   ionViewDidEnter() {
-    this.http.get<any[]>("http://node19.codenvy.io:47107/api/Product/ListProduct")
+    this.http.get<any[]>("http://node17.codenvy.io:55659/api/Product/ListProduct")
       .subscribe((data) => {
          console.log("Complete");
         this.productList = data;
