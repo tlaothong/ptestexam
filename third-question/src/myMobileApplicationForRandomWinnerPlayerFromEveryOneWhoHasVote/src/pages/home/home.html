@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Vote
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <form (ngSubmit)="submit()">
+    <ion-item>
+      <ion-label>Username</ion-label>
+      <ion-input type="text" [(ngModel)]="model.username" name="username"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Vote Number</ion-label>
+      <ion-input type="text" [(ngModel)]="model.votenumber" name="votenumber"></ion-input>
+    </ion-item>
+    <button ion-button type="submit" block>Vote</button>
+  </form>
+
+  <ion-footer>
+    <button ion-button color="danger" block (click)="viewsummary()">View Summary</button>
+  </ion-footer>
+</ion-content>

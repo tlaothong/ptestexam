@@ -1,0 +1,7 @@
+{
+  "name": "myMobileApplicationForRandomWinnerPlayerFromEveryOneWhoHasVote",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}
