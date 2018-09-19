@@ -30,12 +30,12 @@ namespace myAPI.Controllers
         }
 
         [HttpGet("{key}")]
-        public int CalculateTotalPrice(string key, int quantity)
+        public CalculateResult CalculateTotalPrice(string key, int quantity)
         {
             const int defaultReturnValue = 0;
             const int minimumQuantity = 1;
             var isValid = !string.IsNullOrWhiteSpace(key) && quantity >= minimumQuantity;
-            if (!isValid) return defaultReturnValue;
+            if (!isValid) return null;
 
             int.TryParse(key, out int convertToPrice);
             Product result = null;
@@ -45,7 +45,11 @@ namespace myAPI.Controllers
             }
 
             if (result == null) result = _myProducts.FirstOrDefault(it => it.Name.Contains(key, StringComparison.CurrentCultureIgnoreCase) || it.SerialNumber.Contains(key, StringComparison.CurrentCultureIgnoreCase));
-            return result != null ? result.Price * quantity : defaultReturnValue;
+            return new CalculateResult
+            {
+                ProductDetail = result,
+                TotalPrice = result != null ? result.Price * quantity : defaultReturnValue
+            };
 
         }
 

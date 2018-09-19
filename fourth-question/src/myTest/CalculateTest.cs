@@ -25,20 +25,26 @@ namespace myTest
         public void Calculate_Success(string productId, int quantity, int expectedPrice)
         {
             var result = _myApi.CalculateTotalPrice(productId, quantity);
-            Assert.Equal(expectedPrice, result);
+            Assert.Equal(expectedPrice, result.TotalPrice);
         }
 
         [Theory]
         [InlineData(" ", 1)]
         [InlineData("", 1)]
         [InlineData(null, 1)]
-        [InlineData("productid-does-not-exist", 1)]
         [InlineData("LG", 0)]
         public void Calculate_Failed(string productId, int quantity)
         {
             var result = _myApi.CalculateTotalPrice(productId, quantity);
-            const int expectedPrice = 0;
-            Assert.Equal(expectedPrice, result);
+            Assert.Null(result);
+        }
+
+        [Theory]
+        [InlineData("productid-does-not-exist", 1)]
+        public void Calculate_ProductDoesNotExist(string productId, int quantity)
+        {
+            var result = _myApi.CalculateTotalPrice(productId, quantity);
+            Assert.Null(result.ProductDetail);
         }
     }
 }
