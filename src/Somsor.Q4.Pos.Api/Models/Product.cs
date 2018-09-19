@@ -7,6 +7,6 @@ namespace Somsor.Q4.Pos.Api.Models
         public string Id { get; set; }
         public string Name { get; set; }
         public string SerialNumber { get; set; }
-        public int UnitPrice { get; set; }
+        public double UnitPrice { get; set; }
     }
 }

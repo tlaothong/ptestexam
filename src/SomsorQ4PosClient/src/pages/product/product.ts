@@ -13,7 +13,7 @@ export class ProductPage {
 
   Products: Product[];
 
-  constructor(public navCtrl: NavController, private http: HttpClient, public alertCtrl: AlertController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private http: HttpClient, public alertCtrl: AlertController) {
   }
 
   Create() {

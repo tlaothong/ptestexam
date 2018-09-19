@@ -6,7 +6,15 @@ export class Product {
     serialNumber: string;
     unitPrice: number;
 }
-//property name start with lower case
+
+export class ProductPurchase extends Product {
+    purchaseCount: number;
+}
+
+export class Order {
+    id: string;
+    products: ProductPurchase[];
+}
 
 export class GlobalVarible {
     static host: string = "https://localhost:5001";

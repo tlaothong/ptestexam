@@ -5,17 +5,19 @@ import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 
 import { HomePage } from '../pages/home/home';
+import { OrdercreatePage } from '../pages/ordercreate/ordercreate';
 import { ProductPage } from '../pages/product/product';
+import { ProductcreatePage } from '../pages/productcreate/productcreate';
 import { TabsPage } from '../pages/tabs/tabs';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-import { ProductcreatePage } from '../pages/productcreate/productcreate';
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
+    OrdercreatePage,
     ProductPage,
     ProductcreatePage,
     TabsPage
@@ -29,6 +31,7 @@ import { ProductcreatePage } from '../pages/productcreate/productcreate';
   entryComponents: [
     MyApp,
     HomePage,
+    OrdercreatePage,
     ProductPage,
     ProductcreatePage,
     TabsPage

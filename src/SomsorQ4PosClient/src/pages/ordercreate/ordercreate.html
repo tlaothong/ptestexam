@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>ordercreate</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list *ngIf="Order.products">
+    <ion-item ion-item *ngFor="let s of Order.products">
+      <img col-3 item-start src="https://static1.squarespace.com/static/52b6128ce4b067a0f5987a3a/t/531e0c0de4b089910ebb2224/1394478094498/Product_icon.png"
+      /> {{s.name}}
+      <br /> Serial: {{s.serialNumber}}
+      <br /> Unit price: {{s.unitPrice}}
+      <br /> <input type="number" [(ngModel)]="s.purchaseCount" placeholder="Purchase Count" />
+    </ion-item>
+  </ion-list>
+  <button ion-button (click)="Purchase()">Purchase</button>
+</ion-content>
