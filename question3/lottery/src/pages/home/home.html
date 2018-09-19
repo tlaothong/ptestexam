@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Lottery Thailand
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="top">
+  <div class="top">
+
+  </div>
+ 
+  <div class="lottery">
+    <h1>
+      {{num}}
+    </h1>
+  </div>
+
+  <ion-grid>
+    <div class="text-center">
+      <button ion-button round large (click)="random()">
+        Start
+      </button>
+    </div>
+  </ion-grid>
+  
+  <div>
+
+    <h1>{{showWinner}}</h1>
+  </div>
+</ion-content>
+
+<!-- <ion-row>
+    <ion-col col-12>
+      <div class = "centerPosition">
+        {{NumberLot}}
+      </div>
+    </ion-col>
+  </ion-row>
+ -->

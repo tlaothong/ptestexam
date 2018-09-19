@@ -1,0 +1,7 @@
+{
+  "name": "lttery",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}
