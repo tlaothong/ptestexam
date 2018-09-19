@@ -13,7 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\mobileapp\mobileapp.csproj" />
+    <ProjectReference Include="..\webapi\webapi.csproj" />
   </ItemGroup>
 
 </Project>
