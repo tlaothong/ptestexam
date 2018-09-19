@@ -1,0 +1,7 @@
+{
+  "name": "BMIIonicApp",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}
