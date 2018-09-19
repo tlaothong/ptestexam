@@ -1,12 +1,12 @@
-﻿using System;
+﻿// using System;
 
-namespace Services
-{
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            Console.WriteLine("Hello World!");
-        }
-    }
-}
+// namespace Services
+// {
+//     class Program
+//     {
+//         static void Main(string[] args)
+//         {
+//             Console.WriteLine("Hello World!");
+//         }
+//     }
+// }
