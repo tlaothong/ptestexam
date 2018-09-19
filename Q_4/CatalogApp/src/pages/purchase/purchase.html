@@ -1,0 +1,54 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      รายการสินค้า
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-item>
+      <ion-row>
+        <ion-col col-4>
+          <h5 class="centerPosition">Product</h5>
+        </ion-col>
+        <ion-col col-4>
+          <h5 class="centerPosition">Price</h5>
+        </ion-col>
+        <ion-col col-4>
+            <h5 class="centerPosition">Amount</h5>
+        </ion-col>
+      </ion-row>
+    </ion-item>
+
+    <div *ngFor="let p of products" ion-item>
+      
+        <ion-row>
+          <ion-col col-4>
+
+            <h5 class="centerPosition"> {{p.name}}</h5>
+          </ion-col>
+
+          <ion-col col-4>
+            <h5 class="centerPosition"> {{p.price}}</h5>
+          </ion-col>
+          <ion-col col-4>
+            <ion-item>
+              <ion-input type="number" placeholder="จำนวน" [(ngModel)]="p.amount"></ion-input>
+            </ion-item>
+          </ion-col>
+
+        </ion-row>
+    </div>
+
+    <ion-row>
+        <ion-col col-12>
+          <div class="centerPosition">
+            <button ion-button color="danger" round (click)="Purchase()">Add Product</button>
+          </div>
+  
+        </ion-col>
+      </ion-row>
+
+  </ion-grid>
