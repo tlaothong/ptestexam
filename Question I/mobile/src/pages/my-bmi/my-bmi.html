@@ -1,0 +1,36 @@
+<!--
+  Generated template for the MyBmiPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>MyBMI</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+
+<ion-content padding>
+
+    
+    <div align="center">
+      <ion-item>
+        <ion-label floating>weight</ion-label>
+        <ion-input type="number" [(ngModel)]="weight"></ion-input>
+      </ion-item>
+      <ion-item>
+          <ion-label floating>height</ion-label>
+          <ion-input type="number" [(ngModel)]="height"></ion-input>
+        </ion-item>
+  
+    <button ion-button color="secondary" (click)="GetBMI()">Check BMI</button>
+    
+    <ion-item text-wrap>
+        {{ result }}
+    </ion-item>
+    </div>
+</ion-content>
