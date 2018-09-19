@@ -1,14 +1,51 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar color="danger">
     <ion-title>
-      Ionic Blank
+      Mana Lotto
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+  <ion-row style="align-items: center">
+    <ion-col col-3>
+      Name
+    </ion-col>
+    <ion-col col-8>
+      <ion-item>
+        <ion-input type="text" placeholder="{{user.name}}" [(ngModel)]="user.name"></ion-input>
+      </ion-item>
+    </ion-col>
+  </ion-row>
+  <ion-row style="align-items: center">
+    <ion-col col-3>
+      Number
+    </ion-col>
+    <ion-col col-8>
+      <ion-item>
+        <ion-input type="number" placeholder="{{user.number}}" [(ngModel)]="user.number"></ion-input>
+      </ion-item>
+    </ion-col>
+  </ion-row>
+
+  <ion-row padding>
+    <button ion-button block round color="secondary" (click)="AddUser()">ADD</button>
+  </ion-row>
+
+  <ion-row padding>
+    <button ion-button block round (click)="GetUsersWinner()">START</button>
+  </ion-row>
+
+  <ion-item *ngFor="let user of users">
+    <ion-row>
+      <ion-col col-4 style="text-align: left ">
+        {{user.name}}
+      </ion-col>
+      <ion-col col-4 style="text-align: left">
+        {{user.number}}
+      </ion-col>
+    </ion-row>
+  </ion-item>
+
+
 </ion-content>

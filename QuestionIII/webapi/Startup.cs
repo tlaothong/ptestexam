@@ -40,6 +40,12 @@ namespace webapi
                 app.UseHsts();
             }
 
+            app.UseCors(builder =>
+                builder.WithOrigins("*")
+                .AllowAnyHeader()
+                .AllowAnyMethod()
+            );
+
             app.UseHttpsRedirection();
             app.UseMvc();
         }
