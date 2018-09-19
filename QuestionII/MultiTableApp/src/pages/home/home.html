@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-navbar color="dark">
+    <ion-title>
+      Multiplication table
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-row>
+    <ion-col col-1>
+      <ion-item padding>
+        <ion-input type="number" placeholder="Input n" [(ngModel)]="n"></ion-input>
+      </ion-item>
+    </ion-col>
+    <ion-col col-1 style="align-self: center">
+      <button ion-button full (click)="GetTable()" padding>Enter</button>
+    </ion-col>
+  </ion-row>
+
+  <ion-grid padding *ngIf="n != null">
+    <ion-row style="text-align: center">
+    <ion-col col-1>
+      *
+    </ion-col>
+    <ion-col col-1 *ngFor="let n of table[0]">
+      {{n}}
+    </ion-col>
+  </ion-row>
+  <ion-row *ngFor="let _table of table" style="text-align: center">
+    <ion-col col-1>
+      {{_table[0]}}
+    </ion-col>
+    <ion-col col-1 *ngFor="let t of _table" >
+      {{t}}
+    </ion-col>
+  </ion-row>
+  </ion-grid>
+  
+
+
+
+
+
+</ion-content>
