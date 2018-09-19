@@ -1,0 +1,7 @@
+{
+  "name": "bmicalculatorionic",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}
