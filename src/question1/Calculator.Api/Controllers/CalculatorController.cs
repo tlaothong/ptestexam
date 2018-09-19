@@ -7,16 +7,16 @@ using Calculator.Models;
 
 namespace Calculator.Api.Controllers
 {
-    [Route("api/[controller]/[action]")]
+    [Route("api/[controller]")]
     [ApiController]
     public class CalculatorController : ControllerBase
     {
         // GET api/values
-        [HttpGet]
-        public ActionResult<CalculateResult> Get()
+        [HttpGet("{weight}/{height}")]
+        public ActionResult<CalculateResult> Get(double weight, double height)
         {
             var bmiCalculator = new BMICalculator();
-            var result = bmiCalculator.Calculate(50, 40);
+            var result = bmiCalculator.Calculate(weight, height);
             return result;
         }
     }

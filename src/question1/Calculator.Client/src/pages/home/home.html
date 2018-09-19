@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Ionic Blank
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <input type="text" class="form-control" id="weight" [(ngModel)]="weight" name="weight" block placeholder="Weight">
+  <input type="text" class="form-control" id="height" [(ngModel)]="height" name="height" block placeholder="Height">
+  <button ion-button block (click)="Calculate()">Calculate</button>
+
+  <div>
+    <span>Your BMI: </span><span>{{bmi}}</span>
+  </div>
+  <div>
+    <span>{{suggest}}</span>
+  </div>
+</ion-content>
