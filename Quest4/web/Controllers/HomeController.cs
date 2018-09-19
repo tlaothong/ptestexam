@@ -24,7 +24,7 @@ namespace web.Controllers
         {
             var request = new RestRequest("getItems", Method.GET);
             IRestResponse<List<Item>> response = client.Execute<List<Item>>(request);
-            return View(response.Data);
+            return View(response.Data ?? new List<Item>());
         }
 
         public IActionResult AddItem(string id)
@@ -57,7 +57,7 @@ namespace web.Controllers
                 items = response.Data
             };
             Model.totalprice = Model.items.Sum(it => { return it.amount * it.price; });
-            return View(Model);
+            return View(Model ?? new List<CartItem>());
         }
     }
 }
