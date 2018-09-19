@@ -21,9 +21,9 @@ namespace webapi
             height = (height * 2) / 100;
             bmi = (weight / height);
             
-            //    if ( bmi > shopbudget )
+            //    if ( bmi >= 18.5 && bmi <= 25 )
             //     {
-
+                        
             //         throw new Exception("!! i can't change you cash For Diamond");
             //     }
             //     //Check input should more than 0         

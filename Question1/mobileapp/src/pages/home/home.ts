@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, Alert } from 'ionic-angular';
 import { GlobalVarible } from '../../app/models';
 import { HttpClient } from '@angular/common/http';
 
@@ -11,7 +11,7 @@ export class HomePage {
 
   weight: number;
   height: number;
-  bmi: any;
+   bmi: any;
   textdetail: string;
 
 
@@ -27,8 +27,19 @@ export class HomePage {
        
         this.bmi = data;
         console.log(this.bmi);
-        
+        if (this.bmi >= 18.5 && this.bmi <= 25 ) {
+          this.textdetail = "You're within the normal weight range.";
+          
+        }
+        if (this.bmi < 18.5  ) {
+          this.textdetail = "You're underweight. You should consult your doctor!";
+          
+        }
+        if(this.bmi > 25){
+          this.textdetail = "otherwise suggest to consult the doctor.";
+        }
       });
 
+      
   }
 }
