@@ -17,7 +17,8 @@
         <span col-8>{{s.purchaseDate}}</span>
       </div>
       <div *ngFor="let p of s.products" ion-row>
-        <span col-8>{{p.name}}</span>
+        <span col-6>{{p.name}}</span>
+        <span col-2>{{p.purchaseCount}}</span>
         <span col-4 text-right>{{p.unitPrice}}</span>
       </div>
       <div ion-row>

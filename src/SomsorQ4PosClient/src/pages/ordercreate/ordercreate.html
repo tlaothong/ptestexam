@@ -8,11 +8,19 @@
   <ion-list *ngIf="Order.products">
     <ion-item ion-item *ngFor="let s of Order.products">
       <img col-3 item-start src="https://static1.squarespace.com/static/52b6128ce4b067a0f5987a3a/t/531e0c0de4b089910ebb2224/1394478094498/Product_icon.png"
-      /> {{s.name}}
-      <br /> Serial: {{s.serialNumber}}
-      <br /> Unit price: {{s.unitPrice}}
-      <br /> <input type="number" [(ngModel)]="s.purchaseCount" placeholder="Purchase Count" />
+      />
+      <div ion-row>
+        <span col-offset-6 col-4 text-right>{{s.name}}</span>
+      </div>
+      <div ion-row>
+        <span col-6>Unit price</span>
+        <span col-6 text-right>{{s.unitPrice}}</span>
+      </div>
+      <div ion-row>
+        <span col-6>Count</span>
+        <span col-6><input type="number" [(ngModel)]="s.purchaseCount" placeholder="Count" class="ion-input" style="width:100%" /></span>
+      </div>
     </ion-item>
   </ion-list>
-  <button ion-button (click)="Purchase()">Purchase</button>
+  <button ion-button (click)="Purchase()" full>Purchase</button>
 </ion-content>
