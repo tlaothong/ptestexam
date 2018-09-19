@@ -10,8 +10,6 @@ namespace Somsor.Q3.Lottery.Controllers
 {
     public class HomeController : Controller
     {
-        // public static List<Gambler> Gamblers = new List<Gambler>();
-        static Random ran = new Random();
         public static List<Gambler> Gamblers = new List<Gambler>();
 
         public IActionResult Index()
@@ -58,6 +56,7 @@ namespace Somsor.Q3.Lottery.Controllers
         
         public IActionResult GenerateRandomGambler(int count)
         {
+            var ran = new Random();
             Gamblers.AddRange(Enumerable.Range(1, count).Select(x=>new Gambler{
                 Name = $"Gambler {x}",
                 Number = ran.Next(0, 100),
