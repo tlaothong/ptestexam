@@ -1,5 +1,6 @@
 using multiplication.Models;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace multiplication
 {
@@ -7,6 +8,7 @@ namespace multiplication
     {
         public MultiplicationTable GetMultiplicationTable(int number)
         {
+            var firstRow = GenerateFirstRow(number);
             return new MultiplicationTable
             {
                 Rows = new List<string>
@@ -15,6 +17,13 @@ namespace multiplication
                     ""
                 }
             };
+        }
+
+        public string GenerateFirstRow(int number)
+        {
+            var numbers = Enumerable.Range(1, number);
+            var firstRow = "* " + string.Join(" ", numbers);
+            return firstRow;
         }
     }
 }
