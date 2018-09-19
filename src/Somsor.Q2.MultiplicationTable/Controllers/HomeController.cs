@@ -10,27 +10,13 @@ namespace Somsor.Q2.MultiplicationTable.Controllers
 {
     public class HomeController : Controller
     {
-        public IActionResult Index()
+        public IActionResult Index(int? n)
         {
-            return View();
-        }
-
-        public IActionResult About()
-        {
-            ViewData["Message"] = "Your application description page.";
-
-            return View();
-        }
-
-        public IActionResult Contact()
-        {
-            ViewData["Message"] = "Your contact page.";
-
-            return View();
-        }
-
-        public IActionResult Privacy()
-        {
+            if(n.HasValue && n > 0)
+            {
+                var result = Enumerable.Range(1, n.Value).Select(x => Enumerable.Range(1, n.Value).Select(y => y * x));
+                return View(result);
+            }
             return View();
         }
 

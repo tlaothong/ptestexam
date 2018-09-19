@@ -1,0 +1,15 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "build",
+                "${workspaceFolder}/Somsor.Q2.MultiplicationTable/Somsor.Q2.MultiplicationTable.csproj"
+            ],
+            "problemMatcher": "$msCompile"
+        }
+    ]
+}
