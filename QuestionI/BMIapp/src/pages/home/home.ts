@@ -18,7 +18,7 @@ export class HomePage {
   }
 
   CalcBMI() {
-    this.http.get<number>("https://localhost:5001/api/Values/CalcBMI/" + this.weight + "/" + this.height)
+    this.http.get<number>("http://node19.codenvy.io:47293/api/Values/CalcBMI/" + this.weight + "/" + this.height)
       .subscribe(data => {
         this.bmi = data;
         if(this.bmi >= 18.5 || this.bmi <= 25){
