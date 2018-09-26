@@ -1,0 +1,38 @@
+﻿@{
+    ViewData["Title"] = "MultiplicationTable";
+}
+<h2>@ViewData["Title"]</h2>
+<h3>@ViewData["Message"]</h3>
+
+<p>Use this area to provide additional information.</p>
+
+
+
+        @{
+            int n = 3;           
+
+            for (int i = 0; i <= n; i++)
+            {
+                var r = i == 0 ? "* " : i.ToString()+ " ";
+
+                 @r
+                for (int j = 1; j <= n; j++)
+                {
+                    if (i > 0) 
+                     {
+                         var a = i * j + " ";
+                         @a 
+                     }
+                    else 
+                      { 
+                          var b = j + " ";
+                          @b 
+                      }
+
+                     
+                }
+                <br> </br>
+              
+            }      
+        }
+
