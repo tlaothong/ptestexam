@@ -1,6 +1,6 @@
 using System;
 
-namespace Multitable.Models
+namespace lottery.Models
 {
     public class ErrorViewModel
     {
