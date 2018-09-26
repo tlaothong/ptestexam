@@ -1,0 +1,7 @@
+{
+  "name": "QIBMI ",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}
