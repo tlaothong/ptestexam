@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>List</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let item of products">
+      <ion-row>
+        <ion-col col-md-2>
+          Name : {{ item.name }}
+        </ion-col>
+        <ion-col col-md-2>
+          SerialNumber : {{ item.serialNumber }}
+        </ion-col>
+        <ion-col col-md-2>
+          UnitPrice : {{ item.unitPrice }}
+        </ion-col>
+        <ion-col col-md-2>
+          <button ion-button (click)="addOrder(item)"> add to cart</button>
+        </ion-col>
+      </ion-row>
+    </ion-item>
+  
+
+    <h1> Your Order Here </h1> 
+
+    <h2>  Total Price  {{ total }} </h2> 
+ 
+
+    <ion-item *ngFor="let item of order">
+        <ion-row>
+          <ion-col col-md-2>
+            Name : {{ item.name }}
+          </ion-col>
+          <ion-col col-md-2>
+            SerialNumber : {{ item.serialNumber }}
+          </ion-col>
+          <ion-col col-md-2>
+            UnitPrice : {{ item.unitPrice }}
+          </ion-col>        
+        </ion-row>
+      </ion-item>
+
+    
+  </ion-list>
+</ion-content>

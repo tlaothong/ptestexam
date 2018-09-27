@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Home</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <p> The Catalog and the POS </p>
+
+  <ion-list>
+
+    <ion-item>
+      <ion-label>Name </ion-label>
+      <ion-input type="name" [(ngModel)]="name"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Serial Number</ion-label>
+      <ion-input type="name" [(ngModel)]="serialnumber"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Unit Price</ion-label>
+      <ion-input type="name" [(ngModel)]="unitprice"></ion-input>
+    </ion-item>
+    <ion-item>
+      <button ion-button (click)="addProduct()">Add Product</button>
+    </ion-item>
+
+
+    <ion-item *ngFor="let item of products">
+      <ion-row>
+        <ion-col col-md-3>
+          Name : {{ item.name }}
+        </ion-col>
+        <ion-col col-md-4>
+          SerialNumber : {{ item.serialNumber }}
+        </ion-col>
+        <ion-col col-md-4>
+          UnitPrice : {{ item.unitPrice }}
+        </ion-col>
+      </ion-row>
+    </ion-item>
+
+  </ion-list>
+</ion-content>

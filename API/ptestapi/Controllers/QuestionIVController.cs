@@ -23,16 +23,20 @@ namespace ptestapi.Controllers
         [HttpGet("")]
         public List<Product> GetStoreProducts()
         {
+            //if (storeProducts.Count() < 1)
+            //{
+            //    storeProducts.Add(new Product() { Name = "MiFit", SerialNumber = "Mi99", UnitPrice = 999 });
+            //}
             return storeProducts;
         }
 
         [HttpGet("")]
         public Order GetOrder()
-        {
+        {          
             return userOrder;
         }
 
-        [HttpGet("")]
+        [HttpGet("{serialNumber}")]
         public Order AddOrder(string serialNumber)
         {
             var product = storeProducts.Where(x => x.SerialNumber == serialNumber).FirstOrDefault();
