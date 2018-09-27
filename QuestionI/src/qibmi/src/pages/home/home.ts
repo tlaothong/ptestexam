@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'page-home',
@@ -12,7 +13,9 @@ export class HomePage {
   bmi: number = 0;
   result: string;
 
-  constructor(public navCtrl: NavController) {
+  constructor(
+    public navCtrl: NavController,
+    public http: HttpClient) {
 
   }
 
@@ -39,6 +42,17 @@ export class HomePage {
       return;
 
     }
+  }
+
+  bmiapical(){
+    this.http.get("https://localhost:44339/api/QuestionI/"+this.weight+"/"+this.height)
+    .subscribe((data: any) => {
+      this.bmi = data.bmi,
+      this.result = data.message
+    },
+      error => {
+        // ERROR: Do something
+      });
   }
 
 

@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28010.2016
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ptestapi", "ptestapi.csproj", "{0B642D56-4118-4951-8C06-6A7157AFA78D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ptest.test", "..\ptest.test\ptest.test.csproj", "{80D3FEB7-8FEF-4408-9F91-1695869D9581}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{0B642D56-4118-4951-8C06-6A7157AFA78D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0B642D56-4118-4951-8C06-6A7157AFA78D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0B642D56-4118-4951-8C06-6A7157AFA78D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{80D3FEB7-8FEF-4408-9F91-1695869D9581}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{80D3FEB7-8FEF-4408-9F91-1695869D9581}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{80D3FEB7-8FEF-4408-9F91-1695869D9581}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{80D3FEB7-8FEF-4408-9F91-1695869D9581}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

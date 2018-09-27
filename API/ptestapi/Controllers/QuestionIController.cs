@@ -13,7 +13,7 @@ namespace ptestapi.Controllers
     public class QuestionIController : ControllerBase
     {
         // GET api/values
-        [HttpGet]
+        [HttpGet("{weight}/{height}")]
         public BMIResponse Get(double weight, double height)
         {
             var cal = new Q1();
