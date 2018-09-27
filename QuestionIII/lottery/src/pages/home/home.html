@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Ionic Blank
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+   <p> Picking a Winner </p>
+
+  <ion-list>
+      <ion-item>
+        <ion-label fixed>Name </ion-label>
+        <ion-input type="name" [(ngModel)]="name"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label fixed>Number</ion-label>
+        <ion-input type="name" [(ngModel)]="luckkynumber"></ion-input>
+      </ion-item>
+      <ion-item>
+        <button ion-button (click)="chooselotto()">Bet</button>
+      </ion-item>   
+
+    <ion-item *ngFor="let item of players"  >
+      <ion-row>
+        <ion-col col-md-8>           
+            {{ item.name }}       
+        </ion-col>
+        <ion-col col-md-4>  
+            {{ item.number }}              
+        </ion-col>
+      </ion-row>
+    </ion-item>
+    <ion-item>
+        <button ion-button (click)="getwinner()">Start</button>
+      </ion-item>  
+    <p> Winner 
+    <ion-item *ngFor="let item of winners"  >
+        <ion-row>
+          <ion-col col-md-8>           
+              {{ item.name }}       
+          </ion-col>
+          <ion-col col-md-4>  
+              {{ item.number }}              
+          </ion-col>
+        </ion-row>
+      </ion-item>
+
+
+  </ion-list>
+
+</ion-content>
